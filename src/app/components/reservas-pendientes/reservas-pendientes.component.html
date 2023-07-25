@@ -1,0 +1,31 @@
+<h1>Reservas pendientes</h1>
+<table class="table table-hover" id="tablaPendientes">
+    <thead>
+    <tr>
+        <th scope="col">Número</th>
+        <th scope="col">Profesor</th>
+        <th scope="col">Materia</th>
+        <th scope="col">Fecha a reservar</th>
+        <th scope="col">Horario</th>
+        <th scope="col">Datos de contacto</th>
+        <th scope="col">Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let reserva of tablaPendiente">
+            <td>{{reserva.idReserva}}</td>
+            <td>{{reserva.apellidoDocente}}</td>
+            <td>{{reserva.nombreMateria}}</td>
+            <td>{{reserva.fecha}}</td>
+            <td>{{reserva.horaInicio.slice(0, -3)}} - {{reserva.horaFin.slice(0, -3)}}</td>
+            <td>
+                <button type="button" class="btn btn-secondary">Ver datos de contacto</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-success me-2">Aceptar</button>
+                <button type="button" class="btn btn-danger">Rechazar</button>
+            </td>
+        </tr>
+
+    </tbody>
+  </table>

@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand">Laboratorio Linsi</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/principal-admin" [routerLinkActive]="'active'">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/listado-becarios" [routerLinkActive]="'active'">Becarios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/listado-lineas" [routerLinkActive]="'active'">Lineas de investigación</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/gabinete" [routerLinkActive]="'active'">Reserva de Gabinetes</a>
+        </li>
+      </ul>
+    </div>
+    <a class="btn btn-outline-danger my-2 my-sm-0" href="#" onclick="cerrarSesion()">Cerrar sesión</a>
+</nav>
+  

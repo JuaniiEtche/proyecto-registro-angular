@@ -1,0 +1,18 @@
+<table class="table" id="tablaLineas">
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Proyectos</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let linea of tabla">
+            <td>{{linea.nombre}}</td>
+            <td>{{linea.descripcion}}</td>
+            <td>
+                <button type="button" class="btn btn-secondary">Ver proyectos</button>
+            </td>
+        </tr>
+    </tbody>
+  </table>

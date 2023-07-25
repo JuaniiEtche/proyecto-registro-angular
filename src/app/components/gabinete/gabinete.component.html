@@ -1,0 +1,20 @@
+<app-cabecera-admin></app-cabecera-admin>
+
+<div class="container d-flex flex-column mt-4" style="min-height: 100vh">
+  <div class="content mb-4" style="margin-top: -30px">
+    <div class="row">
+      <div class="col-md-8">
+        <br>
+        <app-calendario></app-calendario>
+      </div>
+      <div class="col-md-4 d-flex flex-column justify-content-start align-items-center mb-4">
+        <br><br><br><br>
+        <button type="button" class="btn btn-primary mb-2" (click)="openModalAgregarReserva()">Añadir Reserva</button>
+      </div>
+    </div>
+    <hr>
+    <app-reservas-pendientes></app-reservas-pendientes>
+  </div>
+</div>
+
+<app-footer></app-footer>

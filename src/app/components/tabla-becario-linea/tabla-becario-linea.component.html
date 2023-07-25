@@ -1,0 +1,26 @@
+<div *ngFor="let tabla of tablas">
+  <h5>{{ tabla.nombreLinea }}</h5>
+  <hr class="lineaNombre">
+  <div class="col-md-6">
+    <table class="table tablaBecario">
+      <thead class="table-light">
+        <tr>
+          <th scope="col" class="table-header">BECARIO</th>
+          <th scope="col" class="table-header">LEGAJO</th>
+          <th scope="col" class="table-header">ACCIONES</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let persona of tabla.personaDtos">
+          <td>{{ persona.nombre }} {{ persona.apellido }}</td>
+          <td>{{ persona.legajo }}</td>
+          <td>
+            <button class="btn btn-primary me-2" routerLink="/detalle-becario" [queryParams]="{ idPersona: persona.idPersona,apellido:persona.apellido}" [routerLinkActive]="'active'">Ver Detalles</button>
+            <button class="btn btn-danger" (click)="eliminarUsuarioLinea(persona.idPersona, tabla.nombreLinea)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+  </div>
+</div>

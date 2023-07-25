@@ -1,0 +1,27 @@
+<div class="container mt-4 col-lg-4 ">
+    <div class="card col-sm-10">
+        <div class="card-body ">
+            <form class="form-sign">
+                <div class="form-goup text-center">
+  
+                    <img src="{{getLinsiLogo()}}" alt="70" width="170"/>
+                    <img src="{{getLogo()}}" alt="70" width="170"/>
+                    <label>Bienvenidos al sistema</label>
+                </div>
+                <div class="form-goup">
+                    <label>Usuario:</label>
+                    <input type="text" name="usuario" [(ngModel)]="usuario" class="form-control">
+                </div>
+                <div class="form-goup">
+                    <label>Contraseña:</label>
+                    <input type="password" name="clave" [(ngModel)]="clave" class="form-control">
+                </div>
+                <br>
+                <input type="button" (click)="logear()" value="Ingresar" class="btn btn-primary btn-block me-2">
+                <input type="button" id="registro" value="Solicitar cuenta" class="btn btn-secondary btn-block">
+            </form>
+            <div>
+            </div>
+        </div>
+    </div>
+  </div>
