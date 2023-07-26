@@ -2,13 +2,13 @@
 <div class="container mt-5">
     <h1 class="mb-4">Información del Proyecto: {{datos.nombre}}</h1>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 col-12">
+            <!-- Descripción -->
             <form>
-                <!-- Descripción -->
                 <div class="form-group row">
                     <label for="descripcion" class="col-sm-3 col-form-label vertical-center">Descripción:</label>
                     <div class="col-sm-9">
-                        <textarea class="form-control" id="descripcion" name="descripcion" rows="4" cols="50" [value]="datos.descripcion"></textarea>
+                        <textarea class="form-control" id="descripcion" name="descripcion" rows="4" cols="50" [value]="datos.descripcion" readonly></textarea>
                     </div>
                 </div>
                 <br>
@@ -17,60 +17,54 @@
                 <div class="form-group row">
                     <label for="objetivos" class="col-sm-3 col-form-label vertical-center">Objetivos:</label>
                     <div class="col-sm-9">
-                        <textarea class="form-control" id="objetivos" name="objetivos" rows="4" cols="50" [value]="datos.objetivos"></textarea>
+                        <textarea class="form-control" id="objetivos" name="objetivos" rows="4" cols="50" [value]="datos.objetivos" readonly></textarea>
                     </div>
                 </div>
                 <br>
 
-                <!-- Inicio del Proyecto -->
+                <!-- Ciclo de vida -->
                 <div class="form-group row">
-                    <label for="inicio" class="col-sm-3 col-form-label vertical-center">Inicio del Proyecto:</label>
+                    <label for="cicloVida" class="col-sm-3 col-form-label vertical-center">Ciclo de vida:</label>
                     <div class="col-sm-9">
-                        <input type="date" class="form-control" id="inicio" name="inicio" [value]="datos.fechaInicio">
+                        <input type="text" class="form-control" id="cicloVida" name="cicloVida"
+                        [value]="datos.fechaInicio.split('-').reverse().join('/') + ' al ' + datos.fechaFin.split('-').reverse().join('/')" readonly>
                     </div>
                 </div>
                 <br>
-
-                <!-- Fin del Proyecto -->
-                <div class="form-group row">
-                    <label for="fin" class="col-sm-3 col-form-label vertical-center">Fin del Proyecto:</label>
-                    <div class="col-sm-9">
-                        <input type="date" class="form-control" id="fin" name="fin" [value]="datos.fechaFin">
-                    </div>
-                </div>
-                <br>
-
-                <!-- Alcance -->
-                <div class="form-group row">
-                    <label for="alcance" class="col-sm-3 col-form-label vertical-center">Alcance:</label>
-                    <div class="col-sm-9">
-                        <textarea class="form-control" id="alcance" name="alcance" rows="4" cols="50" [value]="datos.alcance"></textarea>
-                    </div>
-                </div>
-                <br>
-
-                <!-- Integrantes -->
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label vertical-center">Integrantes:</label>
-                    <div class="col-sm-9">
-                        <ul>
-                            <li>Juan Pérez</li>
-                            <li>María Gómez</li>
-                            <li>Luis González</li>
-                        </ul>
-                    </div>
-                </div>
-                <br>
-
-                <!-- Botón "Editar" -->
-                <div class="form-group row">
-                    <div class="col-sm-9 offset-sm-3">
-                        <button type="button" class="btn btn-primary">Editar</button>
-                    </div>
-                </div>
             </form>
         </div>
+
+        <div class="col-md-6 col-12">
+            <!-- Alcance -->
+            <div class="form-group row">
+                <label for="alcance" class="col-sm-3 col-form-label vertical-center">Alcance:</label>
+                <div class="col-sm-9">
+                    <textarea class="form-control" id="alcance" name="alcance" rows="4" cols="50" [value]="datos.alcance" readonly></textarea>
+                </div>
+            </div>
+            <br>
+
+            <!-- Integrantes -->
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label vertical-center">Integrantes:</label>
+                <div class="col-sm-9">
+                    <ul>
+                        <li *ngFor="let p of datos.personas">{{p.nombre}} {{p.apellido}}</li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+
+            <!-- Botón "Editar" -->
+            <div class="form-group row">
+                <div class="col-sm-9 offset-sm-3">
+                    <button type="button" class="btn btn-primary">Editar integrantes</button>
+                </div>
+            </div>
+            <br>
+        </div>
     </div>
+    <br>
 </div>
 
 <app-footer></app-footer>

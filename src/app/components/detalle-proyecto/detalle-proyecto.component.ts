@@ -14,7 +14,6 @@ export class DetalleProyectoComponent {
     this.route.queryParams.subscribe(params => {
       this.idProyecto = params['idProyecto'];
     });
-    console.log(this.idProyecto)
     await this.cargarDatosProyecto(this.idProyecto);
   }
 
