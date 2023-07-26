@@ -50,7 +50,7 @@ export class HomeComponent {
   }
 
   linsiLogo = '../assets/images/linsi-logo.png';
-  logo = '../assets/images/logo.jpg';
+  logo = '../assets/images/logo.png';
 
   getLinsiLogo(){
     return this.linsiLogo;
