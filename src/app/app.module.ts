@@ -27,6 +27,7 @@ import { DetallesBecarioComponent } from './components/detalles-becario/detalles
 import { BecarioDatosAcademicosComponent } from './components/becario-datos-academicos/becario-datos-academicos.component';
 import { BecarioDatosPersonalesComponent } from './components/becario-datos-personales/becario-datos-personales.component';
 import { BecarioProyectosAsignadosComponent } from './components/becario-proyectos-asignados/becario-proyectos-asignados.component';
+
 @NgModule({
   declarations: [
     AppComponent,

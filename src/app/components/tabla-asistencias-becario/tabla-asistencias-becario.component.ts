@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RegistroLinsiService } from 'src/app/services/registro-linsi.service';
 import * as $ from 'jquery';
-import 'datatables.net';
 
 
 @Component({

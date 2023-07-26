@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistroLinsiService } from 'src/app/services/registro-linsi.service';
 import * as $ from 'jquery';
-import 'datatables.net';
 
 @Component({
   selector: 'app-tabla-becario-linea',

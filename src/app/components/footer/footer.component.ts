@@ -9,7 +9,7 @@ export class FooterComponent {
 
   private logoFacebook = '../assets/images/facebook-logo.png';
   private logoInstagram = '../assets/images/instagram-logo.png';
-  private logoUtn = '../assets/images/logo.jpg';
+  private logoUtn = '../assets/images/logo.png';
 
   getLogoFacebook(){
     return this.logoFacebook;

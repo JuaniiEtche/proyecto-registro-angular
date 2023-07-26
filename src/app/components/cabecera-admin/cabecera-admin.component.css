@@ -1,5 +1,58 @@
-.navbar {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  
+@import '~@fortawesome/fontawesome-free/css/all.css';
+@import '~startbootstrap-sb-admin-2/css/sb-admin-2.min.css';
+
+
+/* Estilos para el menú desplegable en SB Admin 2 */
+.dropdown-menu-end {
+  right: 0; /* Posiciona el menú desplegable a la derecha */
+  left: auto; /* Anula cualquier posición a la izquierda previamente establecida */
+}
+
+
+.topbar-divider {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  height: 35px;
+  margin: 5px 10px; 
+}
+
+
+
+/* Estilos para los íconos */
+.navbar .nav-item .nav-link .fas {
+  font-size: 1.25rem;
+}
+
+/* Estilos para los números de notificaciones y mensajes */
+.badge-counter {
+  position: absolute;
+  transform: scale(0.7);
+  top: 0;
+  right: 0;
+  padding: 0.25rem 0.4rem;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  line-height: 1;
+  background-color: #f0506e; /* Color de fondo */
+  color: #fff; /* Color del texto */
+}
+
+/* Estilos adicionales para que los números se muestren correctamente */
+.navbar .nav-item .nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Ajustar posición del ícono y número */
+.navbar .nav-item .nav-link .fas,
+.navbar .nav-item .nav-link .badge-counter {
+  margin-right: 0.25rem;
+}
+
+.img-profile {
+  width: 30px;
+  height: 30px;
+}
+
+
+

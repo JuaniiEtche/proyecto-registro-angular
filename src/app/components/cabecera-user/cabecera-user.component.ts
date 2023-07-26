@@ -12,6 +12,17 @@ export class CabeceraUserComponent {
 
   }
 
+  
+  nombre: string|null="";
+
+  ngOnInit(): void {
+    this.nombre = localStorage.getItem('usuario');
+  }
+
+  getNombreUsuario(){
+    return this.nombre;
+  }
+
   cerrarSesion():void{
     localStorage.removeItem("token");
     localStorage.removeItem("usuario");
