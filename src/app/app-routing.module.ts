@@ -7,7 +7,9 @@ import { AsistenciaBecarioComponent } from './components/asistencia-becario/asis
 import { ListadoBecariosComponent } from './components/listado-becarios/listado-becarios.component';
 import { ListadoLineasComponent } from './components/listado-lineas/listado-lineas.component';
 import { GabineteComponent } from './components/gabinete/gabinete.component';
-import { DetallesBecarioComponent } from './components/detalles-becario/detalles-becario.component';
+import { DetallesBecarioComponent } from './components/detalles-becario/detalles-becario.component'; // Juani le agregó la S a detalleS
+import { DetalleProyectoComponent } from './components/detalle-proyecto/detalle-proyecto.component';
+
 
 const routes: Routes = [
   { path:'', component: HomeComponent},
@@ -17,7 +19,8 @@ const routes: Routes = [
   { path: 'listado-becarios', component:ListadoBecariosComponent},
   { path: 'listado-lineas', component:ListadoLineasComponent},
   { path: 'gabinete', component: GabineteComponent},
-  { path: 'detalle-becario',component:DetallesBecarioComponent}
+  { path: 'detalle-becario',component:DetallesBecarioComponent},
+  { path: 'detalle-proyecto',component:DetalleProyectoComponent}
 ];
 
 @NgModule({

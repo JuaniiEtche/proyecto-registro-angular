@@ -27,6 +27,10 @@ import { DetallesBecarioComponent } from './components/detalles-becario/detalles
 import { BecarioDatosAcademicosComponent } from './components/becario-datos-academicos/becario-datos-academicos.component';
 import { BecarioDatosPersonalesComponent } from './components/becario-datos-personales/becario-datos-personales.component';
 import { BecarioProyectosAsignadosComponent } from './components/becario-proyectos-asignados/becario-proyectos-asignados.component';
+import { ModalVerProyectosComponent } from './components/modal-ver-proyectos/modal-ver-proyectos.component';
+import { DataSharingService } from './services/data-sharing-service.service';
+import { DetalleProyectoComponent } from './components/detalle-proyecto/detalle-proyecto.component'; // Asegúrate de importar el servicio aquí
+
 
 @NgModule({
   declarations: [
@@ -51,7 +55,9 @@ import { BecarioProyectosAsignadosComponent } from './components/becario-proyect
     DetallesBecarioComponent,
     BecarioDatosPersonalesComponent,
     BecarioDatosAcademicosComponent,
-    BecarioProyectosAsignadosComponent
+    BecarioProyectosAsignadosComponent,
+    ModalVerProyectosComponent,
+    DetalleProyectoComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +71,7 @@ import { BecarioProyectosAsignadosComponent } from './components/becario-proyect
         }}}),
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [DataSharingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

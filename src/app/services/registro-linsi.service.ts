@@ -66,7 +66,15 @@ export class RegistroLinsiService {
     return this.http.get<any[]>(this.ip+"/admin/reservas-confirmadas",{headers}).toPromise();
   }
 
-  
+  cargarTablaProyectos(lineaNombre:any){
+    const tokenJWT = localStorage.getItem('token');
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${tokenJWT}`
+    });
+    
+    return this.http.get<any[]>(this.ip+"/admin/proyectos/"+lineaNombre.nombreProyecto,{headers}).toPromise();
+  }
 
   cargarReservasPendientes(){
 
@@ -130,5 +138,15 @@ export class RegistroLinsiService {
   
   }
   
+  cargarProyectosId(idProyecto:number){
+    const tokenJWT = localStorage.getItem('token');
+
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${tokenJWT}`
+    });
+
+    return this.http.get<any[]>(this.ip+"/admin/proyecto/detalle/"+idProyecto,{headers}).toPromise();
+  }
   
 }

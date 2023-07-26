@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { RegistroLinsiService } from 'src/app/services/registro-linsi.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import * as $ from 'jquery';
+import { ModalVerProyectosComponent } from '../modal-ver-proyectos/modal-ver-proyectos.component';
+import { DataSharingService } from 'src/app/services/data-sharing-service.service';
 
 @Component({
   selector: 'app-tabla-lineas',
@@ -11,7 +14,7 @@ export class TablaLineasComponent {
 
   tabla: any[] | undefined= [];
 
-  constructor(private registroLinsiService:RegistroLinsiService) {}
+  constructor(private registroLinsiService:RegistroLinsiService, private modalService: NgbModal, private dataSharingService: DataSharingService) {}
 
   async ngAfterViewInit(): Promise<void> {
     await this.armarTablaLineas();
@@ -47,4 +50,12 @@ export class TablaLineasComponent {
   });
     
   }
+
+  openModalVerProyectos(nombreProyecto:string) {
+    const modalRef = this.modalService.open(ModalVerProyectosComponent);
+    const dataToSend = {nombreProyecto};
+    this.dataSharingService.setData(dataToSend);
+    console.log(nombreProyecto);
+  }
+
 }
