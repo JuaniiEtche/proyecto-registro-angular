@@ -16,7 +16,7 @@
             <td class="text-center">{{ persona.legajo }}</td>
             <td class="text-center">
               <button class="btn btn-primary me-2" routerLink="/detalle-becario" [queryParams]="{ idPersona: persona.idPersona,apellido:persona.apellido}" [routerLinkActive]="'active'">Ver Detalles</button>
-              <button class="btn btn-danger" (click)="eliminarUsuarioLinea(persona.idPersona, tabla.nombreLinea)">Eliminar</button>
+              <button class="btn btn-danger" (click)="openEliminarUsuarioLinea(persona.idPersona, tabla.nombreLinea, persona.nombre, persona.apellido)">Eliminar</button>
             </td>
           </tr>
         </tbody>

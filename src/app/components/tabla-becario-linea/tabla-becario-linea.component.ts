@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistroLinsiService } from 'src/app/services/registro-linsi.service';
 import * as $ from 'jquery';
+import { ModalEliminarBecarioComponent } from '../modal-eliminar-becario/modal-eliminar-becario.component';
+import { DataSharingService } from 'src/app/services/data-sharing-service.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-tabla-becario-linea',
@@ -10,8 +13,8 @@ import * as $ from 'jquery';
 export class TablaBecarioLineaComponent {
 
   tablas: any[] | undefined= [];
-
-  constructor(private registroLinsiService:RegistroLinsiService) {}
+  persona: any;
+  constructor(private registroLinsiService:RegistroLinsiService,private modalService: NgbModal, private dataSharingService: DataSharingService ) {}
 
   async ngAfterViewInit(): Promise<void> {
     await this.obtenerDatos();
@@ -25,6 +28,7 @@ export class TablaBecarioLineaComponent {
     try {
       const response = await this.registroLinsiService.cargarTablaLineaUsuario();
       this.tablas = response;
+      console.log(response)
     } catch (error) {
     }
   }
@@ -33,10 +37,13 @@ export class TablaBecarioLineaComponent {
     // Lógica para ver detalles de un becario
   }
 
-  eliminarUsuarioLinea(idPersona: number, nombreLinea: string): void {
-    // Lógica para eliminar un usuario de una línea
+  openEliminarUsuarioLinea(idPersona: number, nombreLinea: string, nombreBecario:string, apellidoBecario:string): void {
+    const modalRef = this.modalService.open(ModalEliminarBecarioComponent);
+    const dataToSend = {'id':idPersona,'nombreLinea':nombreLinea,'nombreBecario':nombreBecario,'apellidoBecario':apellidoBecario};
+    this.dataSharingService.setData(dataToSend);
   }
 
+ 
   initDataTable(): void {
     $('.tablaBecario').DataTable({
       language: {

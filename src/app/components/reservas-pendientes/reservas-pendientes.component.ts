@@ -28,7 +28,7 @@ export class ReservasPendientesComponent {
     try {
       const response = await this.registroLinsiService.cargarReservasPendientes();
       this.tablaPendiente = response;
-      console.log(response)
+      // console.log(response)
     } catch (error) {
     }
 
@@ -66,9 +66,9 @@ export class ReservasPendientesComponent {
     const dataToSend = {'telefono':telefono,'email':email};
     this.dataSharingService.setData(dataToSend);
   }
-  openRechazarReserva(apellidoDocente:string,nombreDocente:string,materia:string,fecha:any){
+  openRechazarReserva(idReserva:number,apellidoDocente:string,nombreDocente:string,materia:string,fecha:any){
     const modalRef = this.modalService.open(ModalRechazarReservaComponent);
-    const dataToSend = {'apellido':apellidoDocente,'nombre':nombreDocente,'materia':materia,'fecha':fecha};
+    const dataToSend = {'apellido':apellidoDocente,'nombre':nombreDocente,'materia':materia,'fecha':fecha,'id':idReserva};
     this.dataSharingService.setData(dataToSend);
   }
 }
