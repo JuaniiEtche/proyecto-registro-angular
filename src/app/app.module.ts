@@ -32,6 +32,8 @@ import { DataSharingService } from './services/data-sharing-service.service';
 import { DetalleProyectoComponent } from './components/detalle-proyecto/detalle-proyecto.component';
 import { ModalAsistenciasBecarioComponent } from './components/modal-asistencias-becario/modal-asistencias-becario.component';
 import { CommonModule, DatePipe } from '@angular/common';
+import { ModalDetallesContactoComponent } from './components/modal-detalles-contacto/modal-detalles-contacto.component';
+import { ModalDetalleReservaComponent } from './components/modal-detalle-reserva/modal-detalle-reserva.component';
 
 
 
@@ -61,7 +63,9 @@ import { CommonModule, DatePipe } from '@angular/common';
     BecarioProyectosAsignadosComponent,
     ModalVerProyectosComponent,
     DetalleProyectoComponent,
-    ModalAsistenciasBecarioComponent
+    ModalAsistenciasBecarioComponent,
+    ModalDetallesContactoComponent,
+    ModalDetalleReservaComponent
   ],
   imports: [
     BrowserModule,

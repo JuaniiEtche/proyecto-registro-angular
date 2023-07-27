@@ -1,9 +1,14 @@
 <app-cabecera-admin></app-cabecera-admin>
 
+<div class="container mx-2">
+    <a class="btn btn-secondary" routerLink="/principal-admin" [routerLinkActive]="'active'">
+        <i class="fas fa-arrow-left"></i> Volver
+    </a>
+</div>
 
-<br>
 <div class="container">
     <div class="content">
+
         <h1>Información del becario: {{getApellido()}}</h1>
         <hr>
 

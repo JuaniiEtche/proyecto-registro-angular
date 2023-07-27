@@ -2,6 +2,11 @@ import { Component } from '@angular/core';
 import { RegistroLinsiService } from 'src/app/services/registro-linsi.service';
 import * as $ from 'jquery';
 import 'datatables.net';
+import { ModalDetallesContactoComponent } from '../modal-detalles-contacto/modal-detalles-contacto.component';
+import { DataSharingService } from 'src/app/services/data-sharing-service.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 @Component({
   selector: 'app-reservas-pendientes',
@@ -11,7 +16,7 @@ import 'datatables.net';
 export class ReservasPendientesComponent {
   tablaPendiente: any[] | undefined = [];
 
-  constructor(private registroLinsiService:RegistroLinsiService) {}
+  constructor(private registroLinsiService:RegistroLinsiService,private modalService: NgbModal, private dataSharingService: DataSharingService) {}
 
   async ngAfterViewInit(): Promise<void> {
     await this.armarTablaPendientes();
@@ -52,5 +57,12 @@ export class ReservasPendientesComponent {
       searching: false,
       autoWidth:false
     });
+  }
+
+
+  openModalDatos(telefono:any,email:any){
+    const modalRef = this.modalService.open(ModalDetallesContactoComponent);
+    const dataToSend = {'telefono':telefono,'email':email};
+    this.dataSharingService.setData(dataToSend);
   }
 }

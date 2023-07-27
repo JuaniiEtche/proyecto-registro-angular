@@ -9,15 +9,13 @@
                 <thead>
                 <tr>
                   <th>Fecha</th>
-                  <th>Hora Inicio</th>
-                  <th>Hora Fin</th> 
+                  <th>Horario</th>
                 </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let asistencia of tabla">
-                        <td>{{asistencia.fecha | date: 'dd-MM-yyyy' }}</td> 
-                        <td>{{asistencia.horaInicio.slice(0, -3)}}</td> 
-                        <td>{{asistencia.horaFin.slice(0, -3)}}</td> 
+                        <td>{{asistencia.fecha | date: 'dd/MM/yyyy' }}</td> 
+                        <td>{{asistencia.horaInicio.slice(0, -3)}} - {{asistencia.horaFin.slice(0, -3)}}</td> 
                     </tr>
                 </tbody>
               </table>

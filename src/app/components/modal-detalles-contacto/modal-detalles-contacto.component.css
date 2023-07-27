@@ -1,0 +1,13 @@
+/* Estilos para alinear el label e input en línea */
+.inline-label {
+    display: inline-block;
+    width: 100px; /* Ajusta el ancho según tu preferencia */
+    text-align: right; /* Alinea el texto del label a la derecha */
+    margin-right: 10px; /* Espacio entre el label y el input */
+  }
+  
+  .inline-input {
+    display: inline-block;
+    width: 200px; /* Ajusta el ancho según tu preferencia */
+  }
+  

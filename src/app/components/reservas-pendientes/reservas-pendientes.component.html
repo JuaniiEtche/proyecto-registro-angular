@@ -19,7 +19,7 @@
             <td>{{reserva.fecha}}</td>
             <td>{{reserva.horaInicio.slice(0, -3)}} - {{reserva.horaFin.slice(0, -3)}}</td>
             <td>
-                <button type="button" class="btn btn-secondary">Ver datos de contacto</button>
+                <button type="button" class="btn btn-secondary" (click)="openModalDatos(reserva.telefono,reserva.email)">Ver datos de contacto</button>
             </td>
             <td>
                 <button type="button" class="btn btn-success me-2">Aceptar</button>
