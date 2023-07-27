@@ -11,8 +11,9 @@
             <td>{{linea.nombre}}</td>
             <td>{{linea.descripcion}}</td>
             <td>
-                <button type="button" class="btn btn-secondary" (click)="openModalVerProyectos(linea.nombre)">Ver proyectos</button>
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="exampleModalLg" (click)="openModalVerProyectos(linea.nombre)">Ver proyectos</button>
             </td>
         </tr>
     </tbody>
   </table>
+ 
