@@ -4,15 +4,15 @@ import { DataSharingService } from 'src/app/services/data-sharing-service.servic
 import { RegistroLinsiService } from 'src/app/services/registro-linsi.service';
 
 @Component({
-  selector: 'app-modal-detalles-contacto',
-  templateUrl: './modal-detalles-contacto.component.html',
-  styleUrls: ['./modal-detalles-contacto.component.css']
+  selector: 'app-modal-rechazar-reserva',
+  templateUrl: './modal-rechazar-reserva.component.html',
+  styleUrls: ['./modal-rechazar-reserva.component.css']
 })
-export class ModalDetallesContactoComponent {
+export class ModalRechazarReservaComponent {
   constructor(public activeModal: NgbActiveModal, private dataSharingService: DataSharingService, private registroLinsiService: RegistroLinsiService) {}
   receivedData: any;
   
-  datos: any;
+  reserva: any;
 
   onCloseModal(): void {
 
@@ -20,8 +20,7 @@ export class ModalDetallesContactoComponent {
   }
 
   async ngOnInit(): Promise<void> {
-    this.datos = await this.dataSharingService.getData();
+    this.reserva = await this.dataSharingService.getData();
   
   }
-
 }

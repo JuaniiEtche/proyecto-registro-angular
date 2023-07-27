@@ -34,6 +34,7 @@ import { ModalAsistenciasBecarioComponent } from './components/modal-asistencias
 import { CommonModule, DatePipe } from '@angular/common';
 import { ModalDetallesContactoComponent } from './components/modal-detalles-contacto/modal-detalles-contacto.component';
 import { ModalDetalleReservaComponent } from './components/modal-detalle-reserva/modal-detalle-reserva.component';
+import { ModalRechazarReservaComponent } from './components/modal-rechazar-reserva/modal-rechazar-reserva.component';
 
 
 
@@ -65,7 +66,8 @@ import { ModalDetalleReservaComponent } from './components/modal-detalle-reserva
     DetalleProyectoComponent,
     ModalAsistenciasBecarioComponent,
     ModalDetallesContactoComponent,
-    ModalDetalleReservaComponent
+    ModalDetalleReservaComponent,
+    ModalRechazarReservaComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,30 @@
+/* Estilo para el fondo oscuro detrás del modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según lo desees */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Estilo para el contenido del modal */
+  .modal-container {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Estilo para los botones */
+  .modal-buttons button {
+    margin: 5px;
+  }
+  
+  /* Estilo para hacer los bordes redondeados del modal */
+  .modal-content {
+    border-radius: 10px;
+  }
+  
