@@ -1,1 +1,26 @@
-<p>modal-detalle-reserva works!</p>
+<!-- Agregar este código en el lugar donde deseas mostrar el modal -->
+
+<div class="modal-content">
+<div class="modal-header">
+    <h5 class="modal-title">Detalles del evento</h5>
+</div>
+<div class="modal-body">
+    <a id="editarReserva" target="_blank"><img src={{imagenEditar}} style="float:right ;height: 24px; margin-right: 10px;"></a>
+    <div id="eventDate">Fecha: {{fechaFormateada}}</div>
+    <div id="eventStartAndEnd">Hora: desde {{horaMinutos}} hasta las {{horaMinutos2}}</div>
+    <div id="eventTitle">{{selectedEvento.title}}</div>
+    <div id="eventDescription">Departamento: {{departamento}}</div>
+    <div id="eventProfessor">Profesor: {{profesor}}</div>
+    <br>
+    <div>
+        <a>Datos de contacto</a>
+        <hr style="margin-top: 5px; margin-bottom: 5px">
+        <div id="eventNumTelefono">Telefono: {{telefono}}</div>
+        <div id="eventEmail">Email: {{email}}</div>
+    </div>
+    </div>
+    <div class="modal-footer justify-content-between">
+    <button type="button" class="btn btn-danger" id="deleteButton">Eliminar</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="onCloseModal()">Cerrar</button>
+    </div>
+</div>

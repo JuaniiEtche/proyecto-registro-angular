@@ -2,6 +2,10 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { RegistroLinsiService } from 'src/app/services/registro-linsi.service';
 import { Calendar } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import { DataSharingService } from 'src/app/services/data-sharing-service.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDetalleReservaComponent } from '../modal-detalle-reserva/modal-detalle-reserva.component';
+
 
 
 
@@ -16,9 +20,17 @@ export class CalendarioComponent {
   calendar!: Calendar;
   eventos: any[] = [];
 
-  constructor(private registroLinsiService:RegistroLinsiService){
+  constructor(private registroLinsiService:RegistroLinsiService,private modalService: NgbModal, private dataSharingService: DataSharingService){
 
   }
+
+  mostrarDetallesEvento(event:any){
+    const modalRef = this.modalService.open(ModalDetalleReservaComponent);
+    const dataToSend = {event};
+    this.dataSharingService.setData(dataToSend);
+  }
+
+
 
   ngOnInit() {
 
@@ -91,8 +103,11 @@ export class CalendarioComponent {
     })
   }
 
-  mostrarDetallesEvento(evento: any) {
-    // Implementa la lógica para mostrar los detalles del evento
+  onCloseModal(){
+    const modal = document.getElementById('eventoModal');
+    if (modal) {
+      modal.style.display = 'none';
+    }
   }
    
 }
