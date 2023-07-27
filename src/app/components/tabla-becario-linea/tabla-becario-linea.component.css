@@ -1,7 +1,57 @@
+/* Estilos generales */
 .table-header {
-    border-bottom: 1px solid gray;
+  font-weight: bold;
+}
+
+.persona-info {
+  white-space: nowrap;
+}
+
+/* Estilos para el encabezado "BECARIO" */
+.becario {
+  width: 40vw; /* Ajustar el ancho de la columna del becario con una unidad relativa */
+  max-width: 200px; /* Establecer un ancho máximo para la columna del becario */
+}
+
+.becario i {
+  font-style: normal; /* Aplicar la fuente normal al encabezado "BECARIO" */
+}
+
+/* Estilos para los nombres y apellidos de los becarios */
+.tabla-container .persona-info {
+  font-style: italic; /* Aplicar la fuente cursiva a los nombres y apellidos de los becarios */
+}
+
+/* Estilos responsivos */
+@media (max-width: 767px) {
+  /* Para pantallas pequeñas */
+  .table-header {
+    font-size: 14px; /* Reducir el tamaño de fuente del encabezado de la tabla */
   }
-  
-.lineaNombre{
-    border-bottom: 1px solid gray;
+  .table {
+    font-size: 12px; /* Reducir el tamaño de fuente de la tabla */
+  }
+  .legajo,
+  .acciones {
+    width: calc(100vw - 240px); /* Ajustar el ancho de las columnas Legajo y Acciones en pantallas verticales */
+    max-width: 120px; /* Establecer un ancho máximo para las columnas Legajo y Acciones */
+  }
+  .legajo,
+  .acciones {
+    text-align: center; /* Centrar el contenido de las columnas Legajo y Acciones */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Para pantallas medianas */
+  .table {
+    font-size: 14px; /* Ajustar el tamaño de fuente de la tabla */
+  }
+}
+
+@media (min-width: 992px) {
+  /* Para pantallas grandes y extra grandes */
+  .table {
+    font-size: 16px; /* Ajustar el tamaño de fuente de la tabla */
+  }
 }

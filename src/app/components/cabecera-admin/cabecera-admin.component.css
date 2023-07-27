@@ -53,6 +53,46 @@
   width: 30px;
   height: 30px;
 }
+/* NO TOCAR *//* NO TOCAR *//* NO TOCAR */
+/* NO TOCAR *//* NO TOCAR *//* NO TOCAR */
+/* Estilos para ajustar la barra de navegación en pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
 
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
 
+  .navbar-nav li {
+    margin-right: 10px;
+  }
 
+  .navbar-nav li:last-child {
+    margin-right: 0;
+  }
+
+  .navbar-toggler {
+    margin-right: 0;
+  }
+
+  .custom-navbar-collapse {
+    display: none;
+  }
+
+  .navbar-nav .nav-link {
+    margin-right: 0;
+  }
+
+  .navbar .navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+  }
+}
