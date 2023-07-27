@@ -1,22 +1,18 @@
-<div class="modal-container">
-    <h3>Está a punto de rechazar la reserva del profesor {{reserva.apellido}} {{reserva.nombre}} de la materia de {{reserva.materia}} del día {{reserva.fecha}}</h3>
-    <div class="modal-buttons">
-        <button type="button" class="btn btn-primary" (click)="onCloseModal()">Cerrar</button>
-        <button type="button" class="btn btn-danger" (click)="onCloseModal()">Continuar</button>
-    </div>
+<div class="modal-content">
+  <div class="modal-header">
+      <h5 class="modal-title" id="asistencias">Confirmación de rechazo</h5>
   </div>
-  <!-- Agrega la clase 'modal' y 'rounded' para los bordes redondeados -->
-<div class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content rounded">
-      <div class="modal-header">
-        <h5 class="modal-title"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    </div>
+  <div class="modal-body">
+    <h4>¿Está seguro de que desea rechazar la reserva del profesor {{ reserva.apellido }} {{ reserva.nombre }}?</h4>
+    <p>- Materia: {{ reserva.materia }}</p>
+    <p>- Fecha: {{ reserva.fecha }}</p>
+    
+    <br>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="onCloseModal()">Cerrar</button>
+      <button type="button" class="btn btn-danger" (click)="onCloseModal()">Continuar</button>      </div>              
   </div>
 </div>
+
 
 
