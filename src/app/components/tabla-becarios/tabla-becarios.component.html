@@ -17,7 +17,7 @@
         <td>{{becario.email}}</td>
         <td>{{becario.legajo}}</td>
         <td>
-          <button type="button" class="btn btn-secondary">Ver Asistencias</button>
+          <button type="button" class="btn btn-secondary" (click)="openModalAsistencias(becario.idPersona)">Ver Asistencias</button>
         </td>
       </tr>
     </tbody>

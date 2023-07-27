@@ -55,7 +55,6 @@ export class TablaLineasComponent {
     const modalRef = this.modalService.open(ModalVerProyectosComponent);
     const dataToSend = {nombreProyecto};
     this.dataSharingService.setData(dataToSend);
-    console.log(nombreProyecto);
   }
 
 }

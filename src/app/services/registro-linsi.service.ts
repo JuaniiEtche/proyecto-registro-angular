@@ -149,4 +149,15 @@ export class RegistroLinsiService {
     return this.http.get<any[]>(this.ip+"/admin/proyecto/detalle/"+idProyecto,{headers}).toPromise();
   }
   
+
+  cargarAsistenciasBecario(idBecario:number){
+    const tokenJWT = localStorage.getItem('token');
+
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${tokenJWT}`
+    });
+
+    return this.http.get<any[]>(this.ip+"/admin/asistencia/"+idBecario,{headers}).toPromise();
+  }
 }

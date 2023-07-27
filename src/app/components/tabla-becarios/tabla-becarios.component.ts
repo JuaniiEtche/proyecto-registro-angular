@@ -1,6 +1,10 @@
 import { RegistroLinsiService } from 'src/app/services/registro-linsi.service';
 import { Component, AfterViewInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalAsistenciasBecarioComponent } from '../modal-asistencias-becario/modal-asistencias-becario.component';
 import * as $ from 'jquery';
+import { DataSharingService } from 'src/app/services/data-sharing-service.service';
+
 
 @Component({
   selector: 'app-tabla-becarios',
@@ -10,7 +14,7 @@ import * as $ from 'jquery';
 export class TablaBecariosComponent implements AfterViewInit {
   tabla: any[] | undefined= [];
 
-  constructor(private registroLinsiService: RegistroLinsiService) {}
+  constructor(private registroLinsiService: RegistroLinsiService,private modalService: NgbModal, private dataSharingService: DataSharingService) {}
 
   async ngAfterViewInit(): Promise<void> {
     await this.armarTablaBecarios();
@@ -46,5 +50,11 @@ export class TablaBecariosComponent implements AfterViewInit {
       lengthMenu: [5, 10, 25, 50], // Modificar las opciones de cantidad de registros
       pageLength: 10, // Cantidad de registros mostrados por página por defecto
     });
+  }
+
+  openModalAsistencias(idBecario:number){
+    const modalRef = this.modalService.open(ModalAsistenciasBecarioComponent);
+    const dataToSend = {idBecario};
+    this.dataSharingService.setData(dataToSend);
   }
 }

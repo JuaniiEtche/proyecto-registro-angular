@@ -29,7 +29,10 @@ import { BecarioDatosPersonalesComponent } from './components/becario-datos-pers
 import { BecarioProyectosAsignadosComponent } from './components/becario-proyectos-asignados/becario-proyectos-asignados.component';
 import { ModalVerProyectosComponent } from './components/modal-ver-proyectos/modal-ver-proyectos.component';
 import { DataSharingService } from './services/data-sharing-service.service';
-import { DetalleProyectoComponent } from './components/detalle-proyecto/detalle-proyecto.component'; // Asegúrate de importar el servicio aquí
+import { DetalleProyectoComponent } from './components/detalle-proyecto/detalle-proyecto.component';
+import { ModalAsistenciasBecarioComponent } from './components/modal-asistencias-becario/modal-asistencias-becario.component';
+import { CommonModule, DatePipe } from '@angular/common';
+
 
 
 @NgModule({
@@ -57,7 +60,8 @@ import { DetalleProyectoComponent } from './components/detalle-proyecto/detalle-
     BecarioDatosAcademicosComponent,
     BecarioProyectosAsignadosComponent,
     ModalVerProyectosComponent,
-    DetalleProyectoComponent
+    DetalleProyectoComponent,
+    ModalAsistenciasBecarioComponent
   ],
   imports: [
     BrowserModule,
@@ -70,6 +74,7 @@ import { DetalleProyectoComponent } from './components/detalle-proyecto/detalle-
           return localStorage.getItem('token');
         }}}),
     AppRoutingModule,
+    CommonModule
   ],
   providers: [DataSharingService],
   bootstrap: [AppComponent]

@@ -3,13 +3,13 @@
         <div class="col">
             <div class="form-group">
                 <label for="carrera">Carrera:</label>
-                <input type="text" class="form-control" id="carrera" name="carrera" readonly>
+                <input type="text" class="form-control" id="carrera" name="carrera" [value]="datos.carrera" readonly>
             </div>
         </div>
         <div class="col">
             <div class="form-group">
                 <label for="anio_ingreso">Año ingreso:</label>
-                <input type="text" class="form-control" id="anio_ingreso" name="anio_ingreso" readonly>
+                <input type="text" class="form-control" id="anio_ingreso" name="anio_ingreso" [value]="datos['añoIngreso']" readonly>
             </div>
         </div>
     </div>
@@ -17,13 +17,13 @@
         <div class="col">
             <div class="form-group">
                 <label for="anio_cursada">Año cursada:</label>
-                <input type="text" class="form-control" id="anio_cursada" name="anio_cursada" readonly>
+                <input type="text" class="form-control" id="anio_cursada" name="anio_cursada" [value]="datos['añoCursada']" readonly>
             </div>
         </div>
         <div class="col">
             <div class="form-group">
                 <label for="materias_cursadas">Cantidad de materias cursadas:</label>
-                <input type="text" class="form-control" id="materias_cursadas" name="materias_cursadas" readonly>
+                <input type="text" class="form-control" id="materias_cursadas" name="materias_cursadas" [value]="datos['cantMateriasCursadas']" readonly>
             </div>
         </div>
     </div>
@@ -31,17 +31,18 @@
         <div class="col">
             <div class="form-group">
                 <label for="materias_aprobadas">Cantidad de materias aprobadas:</label>
-                <input type="text" class="form-control" id="materias_aprobadas" name="materias_aprobadas" readonly>
+                <input type="text" class="form-control" id="materias_aprobadas" name="materias_aprobadas" [value]="datos['cantMateriasAprobadas']" readonly>
             </div>
         </div>
         <div class="col">
             <div class="form-group">
                 <label for="materias_que_cursa">Cantidad de materias que cursa:</label>
-                <input type="text" class="form-control" id="materias_que_cursa" name="materias_que_cursa" readonly>
+                <input type="text" class="form-control" id="materias_que_cursa" name="materias_que_cursa" [value]="datos['cantMateriasQueCursa']" readonly>
             </div>
         </div>
     </div>
 </div>
+<br>
 <div>
     <button class="btn btn-primary me-2">Editar</button>
     <button class="btn btn-primary">Imprimir Informe</button>

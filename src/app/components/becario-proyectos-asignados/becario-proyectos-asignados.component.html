@@ -1,19 +1,26 @@
 <table class="table" id="tablaProyectos">
     <thead>
-    <tr>
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th>Fecha inicio</th>
-        <th>Fecha fin</th>
-        <th>Línea de investigación</th>
-        <th>Observaciones de desempeño</th>
-    </tr>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Ciclo de vida</th>
+            <th>Línea de investigación</th>
+            <th>detalle</th>
+        </tr>
     </thead>
     <tbody>
-    <!-- Aquí puedes agregar filas con datos de proyectos asignados -->
+        <tr *ngFor="let proyecto of proyectos">
+            <td>{{ proyecto.nombre }}</td>
+            <td>{{ proyecto.descripcion }}</td>
+            <td>{{ proyecto.fechaInicio | date: 'dd/MM/yyyy' }} - {{ proyecto.fechaFin | date: 'dd/MM/yyyy' }}</td>
+            <td>{{ proyecto.lineaInvestigacion }}</td>
+            <td>
+                <button class="btn btn-secondary" routerLink="/detalle-proyecto" [queryParams]="{ idProyecto: proyecto.idProyecto}" [routerLinkActive]="'active'">Ver Detalle</button>
+            </td>
+        </tr>
     </tbody>
 </table>
 <div>
-    <button class="btn btn-primary me-2">Editar</button>
     <button class="btn btn-primary">Imprimir Informe</button>
 </div>
+<br>
