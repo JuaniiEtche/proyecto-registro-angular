@@ -71,4 +71,11 @@ export class ReservasPendientesComponent {
     const dataToSend = {'apellido':apellidoDocente,'nombre':nombreDocente,'materia':materia,'fecha':fecha,'id':idReserva};
     this.dataSharingService.setData(dataToSend);
   }
+
+
+  aceptarReserva(idReserva:number){ 
+    this.registroLinsiService.reservar(idReserva).then(()=>{
+      window.location.reload();
+    });
+  }
 }

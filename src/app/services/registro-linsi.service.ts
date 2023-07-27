@@ -17,6 +17,39 @@ export class RegistroLinsiService {
     return this.http.post<any>(this.ip+'/public/authenticate',{ usuario, clave }).toPromise();
   }
 
+  reservar(idReserva:number){
+
+    const tokenJWT = localStorage.getItem('token');
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${tokenJWT}`
+    });
+
+    return this.http.post<any>(this.ip+'/admin/reserva/'+idReserva,{},{headers}).toPromise();
+  }
+
+
+  rechazarReservar(idReserva:number){
+
+    const tokenJWT = localStorage.getItem('token');
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${tokenJWT}`
+    });
+
+    return this.http.post<any>(this.ip+'/admin/reserva/rechazar/'+idReserva,{},{headers}).toPromise();
+  }
+
+  eliminarBecarioLinea(idPersona:number,nombreLinea:string){
+    const tokenJWT = localStorage.getItem('token');
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${tokenJWT}`
+    });
+
+    return this.http.delete<any>(this.ip+'/admin/usuarioxlinea/'+idPersona+'/'+nombreLinea,{headers}).toPromise();
+  }
+
   cargarTablaLineaUsuario(){
     const usuario = localStorage.getItem('usuario');
 

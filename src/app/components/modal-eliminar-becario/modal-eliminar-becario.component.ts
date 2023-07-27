@@ -23,4 +23,11 @@ export class ModalEliminarBecarioComponent {
     this.persona = await this.dataSharingService.getData();
     console.log(this.persona)
   }
+
+  eliminarBecarioLinea(idPersona:number,nombreLinea:string){
+    console.log(idPersona,nombreLinea)
+    this.registroLinsiService.eliminarBecarioLinea(idPersona,nombreLinea).then(()=>{
+      window.location.reload();
+    })
+  }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router ,ActivatedRoute, RouterLinkActive} from '@angular/router';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { DataSharingService } from 'src/app/services/data-sharing-service.service';
 import { RegistroLinsiService } from 'src/app/services/registro-linsi.service';
@@ -9,7 +10,7 @@ import { RegistroLinsiService } from 'src/app/services/registro-linsi.service';
   styleUrls: ['./modal-rechazar-reserva.component.css']
 })
 export class ModalRechazarReservaComponent {
-  constructor(public activeModal: NgbActiveModal, private dataSharingService: DataSharingService, private registroLinsiService: RegistroLinsiService) {}
+  constructor(private activatedRoute: ActivatedRoute,private router:Router,public activeModal: NgbActiveModal, private dataSharingService: DataSharingService, private registroLinsiService: RegistroLinsiService) {}
   receivedData: any;
   
   reserva: any;
@@ -23,4 +24,9 @@ export class ModalRechazarReservaComponent {
     this.reserva = await this.dataSharingService.getData();
   
   }
+
+  rechazar(idReserva:number){
+    this.registroLinsiService.rechazarReservar(idReserva).then(() => {
+      window.location.reload();
+    });  }
 }

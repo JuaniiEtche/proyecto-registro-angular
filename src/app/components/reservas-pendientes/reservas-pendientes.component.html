@@ -22,7 +22,7 @@
                 <button type="button" class="btn btn-secondary" (click)="openModalDatos(reserva.telefono,reserva.email)">Ver datos de contacto</button>
             </td>
             <td>
-                <button type="button" class="btn btn-success me-2">Aceptar</button>
+                <button type="button" class="btn btn-success me-2" (click)="aceptarReserva(reserva.idReserva)">Aceptar</button>
                 <button type="button" class="btn btn-danger" (click)="openRechazarReserva(reserva.idReserva,reserva.apellidoDocente,reserva.nombreDocente,reserva.nombreMateria,reserva.fecha)">Rechazar</button>
             </td>
         </tr>
