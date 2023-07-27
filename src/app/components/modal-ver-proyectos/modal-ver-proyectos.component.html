@@ -1,4 +1,4 @@
-<div class="modal fade show" id="exampleModalLg" tabindex="-1" aria-labelledby="exampleModalLgLabel" aria-modal="true" role="dialog" style="display: block;">
+<div class="modal show" id="exampleModalLg" tabindex="-1" aria-labelledby="exampleModalLgLabel" aria-modal="true" role="dialog" style="display: block;">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -30,10 +30,11 @@
                     </tr>
                 </tbody>
               </table>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="onCloseModal()">Cerrar</button>
+            </div>
         </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-primary" (click)="onCloseModal()">Cerrar</button>
-        </div>
+
       </div>
     </div>
   </div>

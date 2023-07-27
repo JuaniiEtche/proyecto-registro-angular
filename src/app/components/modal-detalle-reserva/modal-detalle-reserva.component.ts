@@ -26,7 +26,6 @@ export class ModalDetalleReservaComponent {
   async ngOnInit(): Promise<void> {
 
     this.selectedEvento = await this.dataSharingService.getData();
-    console.log(this.selectedEvento)
     await this.cargarDatos();
 
   }

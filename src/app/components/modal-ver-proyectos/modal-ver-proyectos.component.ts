@@ -27,7 +27,6 @@ export class ModalVerProyectosComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.receivedData = await this.dataSharingService.getData();
     await this.armarTablaProyectos();
-    console.log(this.receivedData); 
   }
 
   // async ngAfterViewInit(): Promise<void> {

@@ -28,7 +28,6 @@ export class TablaBecarioLineaComponent {
     try {
       const response = await this.registroLinsiService.cargarTablaLineaUsuario();
       this.tablas = response;
-      console.log(response)
     } catch (error) {
     }
   }

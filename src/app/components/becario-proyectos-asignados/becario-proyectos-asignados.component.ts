@@ -25,7 +25,6 @@ export class BecarioProyectosAsignadosComponent {
     try {
       const response: any = await this.registroLinsiService.cargarProyectosAsignados(idPersona);
       this.proyectos=response
-      console.log(response)
     } catch (error) {
     }
   }

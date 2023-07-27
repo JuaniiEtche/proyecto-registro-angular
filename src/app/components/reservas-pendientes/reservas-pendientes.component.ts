@@ -28,7 +28,6 @@ export class ReservasPendientesComponent {
     try {
       const response = await this.registroLinsiService.cargarReservasPendientes();
       this.tablaPendiente = response;
-      // console.log(response)
     } catch (error) {
     }
 

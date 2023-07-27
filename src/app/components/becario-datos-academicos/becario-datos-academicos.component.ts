@@ -25,7 +25,6 @@ export class BecarioDatosAcademicosComponent {
     try {
       const response: any = await this.registroLinsiService.cargarDatosAcademicos(idPersona);
       this.datos=response
-      console.log(response)
     } catch (error) {
     }
   }

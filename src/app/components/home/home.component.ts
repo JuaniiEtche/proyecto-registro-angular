@@ -39,7 +39,6 @@ export class HomeComponent {
 
     })
     .catch((error:any)=>{
-      console.log(error)
     })
   }
 
