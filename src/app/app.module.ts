@@ -36,8 +36,6 @@ import { ModalDetallesContactoComponent } from './components/modal-detalles-cont
 import { ModalDetalleReservaComponent } from './components/modal-detalle-reserva/modal-detalle-reserva.component';
 import { ModalRechazarReservaComponent } from './components/modal-rechazar-reserva/modal-rechazar-reserva.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,

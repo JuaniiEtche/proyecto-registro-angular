@@ -9,18 +9,17 @@ import { ListadoLineasComponent } from './components/listado-lineas/listado-line
 import { GabineteComponent } from './components/gabinete/gabinete.component';
 import { DetallesBecarioComponent } from './components/detalles-becario/detalles-becario.component'; // Juani le agregó la S a detalleS
 import { DetalleProyectoComponent } from './components/detalle-proyecto/detalle-proyecto.component';
-
-
+import { authGuard } from './auth.guard';
 const routes: Routes = [
   { path:'', component: HomeComponent},
-  { path: 'principal-admin', component: PrincipalAdminComponent },
-  { path: 'principal-user', component: PrincipalUserComponent},
-  { path: 'asistencia-becario', component:AsistenciaBecarioComponent},
-  { path: 'listado-becarios', component:ListadoBecariosComponent},
-  { path: 'listado-lineas', component:ListadoLineasComponent},
-  { path: 'gabinete', component: GabineteComponent},
-  { path: 'detalle-becario',component:DetallesBecarioComponent},
-  { path: 'detalle-proyecto',component:DetalleProyectoComponent}
+  { path: 'principal-admin', component: PrincipalAdminComponent,canActivate:[authGuard] },
+  { path: 'principal-user', component: PrincipalUserComponent,canActivate:[authGuard]},
+  { path: 'asistencia-becario', component:AsistenciaBecarioComponent,canActivate:[authGuard]},
+  { path: 'listado-becarios', component:ListadoBecariosComponent,canActivate:[authGuard]},
+  { path: 'listado-lineas', component:ListadoLineasComponent,canActivate:[authGuard]},
+  { path: 'gabinete', component: GabineteComponent,canActivate:[authGuard]},
+  { path: 'detalle-becario',component:DetallesBecarioComponent,canActivate:[authGuard]},
+  { path: 'detalle-proyecto',component:DetalleProyectoComponent,canActivate:[authGuard]}
 ];
 
 @NgModule({
