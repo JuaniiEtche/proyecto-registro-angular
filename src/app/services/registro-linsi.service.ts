@@ -192,5 +192,17 @@ export class RegistroLinsiService {
     });
 
     return this.http.get<any[]>(this.ip+"/admin/asistencia/"+idBecario,{headers}).toPromise();
+    
+  }
+
+  cargarBecarioProyecto(nombreLinea:string, nombreProyecto:string){ //Para Modal Becario Proyecto que se usa para editar integrantes
+
+    const tokenJWT = localStorage.getItem('token');
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${tokenJWT}`
+    });
+
+    return this.http.get<any[]>(this.ip+"/admin/lineaInvestigacion/"+nombreLinea+'/'+nombreProyecto,{headers}).toPromise();
   }
 }

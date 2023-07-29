@@ -35,6 +35,7 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { ModalDetallesContactoComponent } from './components/modal-detalles-contacto/modal-detalles-contacto.component';
 import { ModalDetalleReservaComponent } from './components/modal-detalle-reserva/modal-detalle-reserva.component';
 import { ModalRechazarReservaComponent } from './components/modal-rechazar-reserva/modal-rechazar-reserva.component';
+import { ModalBecariosProyectoComponent } from './components/modal-becarios-proyecto/modal-becarios-proyecto.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { ModalRechazarReservaComponent } from './components/modal-rechazar-reser
     ModalAsistenciasBecarioComponent,
     ModalDetallesContactoComponent,
     ModalDetalleReservaComponent,
-    ModalRechazarReservaComponent
+    ModalRechazarReservaComponent,
+    ModalBecariosProyectoComponent
   ],
   imports: [
     BrowserModule,

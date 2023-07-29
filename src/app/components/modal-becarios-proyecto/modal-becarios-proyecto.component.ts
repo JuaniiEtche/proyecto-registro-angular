@@ -11,7 +11,7 @@ import { RegistroLinsiService } from 'src/app/services/registro-linsi.service';
 export class ModalBecariosProyectoComponent {
   constructor(public activeModal: NgbActiveModal, private dataSharingService: DataSharingService, private registroLinsiService: RegistroLinsiService) {}
   receivedData: any;
-  datos: any[] = [];
+  datos:any | [];
 
   onCloseModal(): void {
 
@@ -25,7 +25,7 @@ export class ModalBecariosProyectoComponent {
 
   async armarEditarIntegrantes(): Promise<void> {
     try {
-      const response = await this.registroLinsiService.cargarBecarioProyecto(this.datos?lineaInvestigacion,this.datos.nombre);
+      const response = await this.registroLinsiService.cargarBecarioProyecto(this.datos.lineaInvestigacion,this.datos.nombre);
       this.datos = response;
     } catch (error) {
     }
