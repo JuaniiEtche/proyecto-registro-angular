@@ -20,13 +20,20 @@
                 </th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let becario of datos">
-                        <td> {{becario.nombre}} {{becario.apellido}}</td>
-                        <td>{{becario.email}}</td> 
-                        <td>{{becario.legajo}}</td>                                   
-                        <td><input type="checkbox"></td>
+                  <ng-container *ngIf="datos && datos.length > 0">
+                    <tr *ngFor="let becario of datos[0]?.personaDtos || []">
+                      <td>{{ becario.nombre }} {{ becario.apellido }}</td>
+                      <td>{{ becario.email }}</td>
+                      <td>{{ becario.legajo }}</td>
+                      <td>
+                        <input type="checkbox" [checked]="becario.pertenece === 1">
+                        <mat-checkbox color="blue"></mat-checkbox>
+                      </td>
                     </tr>
+                  </ng-container>
                 </tbody>
+                
+                
               </table>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" (click)="onCloseModal()">Cerrar</button>

@@ -36,6 +36,9 @@ import { ModalDetallesContactoComponent } from './components/modal-detalles-cont
 import { ModalDetalleReservaComponent } from './components/modal-detalle-reserva/modal-detalle-reserva.component';
 import { ModalRechazarReservaComponent } from './components/modal-rechazar-reserva/modal-rechazar-reserva.component';
 import { ModalBecariosProyectoComponent } from './components/modal-becarios-proyecto/modal-becarios-proyecto.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 @NgModule({
   declarations: [
@@ -80,7 +83,9 @@ import { ModalBecariosProyectoComponent } from './components/modal-becarios-proy
           return localStorage.getItem('token');
         }}}),
     AppRoutingModule,
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule,
+    MatCheckboxModule
   ],
   providers: [DataSharingService],
   bootstrap: [AppComponent]
