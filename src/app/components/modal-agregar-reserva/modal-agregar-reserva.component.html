@@ -1,51 +1,70 @@
 <div class="modal-content">
-    <div class="modal-header">
-        <h5 class="modal-title" id="reservaModalLabel">Registrar Reserva</h5>
-    </div>
-    <div class="modal-body">
-        <form>
-        <div class="form-group">
-            <label for="fecha">Fecha:</label>
-            <input type="date" class="form-control" id="fecha" placeholder="Seleccione una fecha">
-        </div>
-        <div class="form-group">
-            <label for="horario">Horario inicio:</label>
-            <input type="time" class="form-control" id="horario" placeholder="Seleccione un horario de inicio">
-        </div>
-        <div class="form-group">
-            <label for="horarioFin">Horario Fin:</label>
-            <input type="time" class="form-control" id="horarioFin" placeholder="Seleccione un horario de fin">
-        </div>
-        <div class="form-group">
-            <label>Gabinetes:</label>
-            <div id="checkboxesGabinetes">
+  <div class="modal-header">
+    <h5 class="modal-title" id="reservaModalLabel">Registrar Reserva</h5>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="fecha">Fecha:</label>
+        <input
+          type="date"
+          class="form-control"
+          id="fecha"
+          placeholder="Seleccione una fecha"
+        />
+      </div>
+      <div class="form-group">
+        <label for="horario">Horario inicio:</label>
+        <input
+          type="time"
+          class="form-control"
+          id="horario"
+          placeholder="Seleccione un horario de inicio"
+        />
+      </div>
+      <div class="form-group">
+        <label for="horarioFin">Horario Fin:</label>
+        <input
+          type="time"
+          class="form-control"
+          id="horarioFin"
+          placeholder="Seleccione un horario de fin"
+        />
+      </div>
+      <div class="form-group">
+        <label>Gabinetes:</label>
+        <div id="checkboxesGabinetes"></div>
+        <span id="contadorEquipos">Cantidad total de equipos: 0</span>
+      </div>
 
-            </div>
-            <span id="contadorEquipos">Cantidad total de equipos: 0</span>
-        </div>
-
-        <div class="form-group">
-            <label for="departamento">Departamento:</label>
-            <select class="form-control" id="departamento">
-
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="materia">Materia:</label>
-            <select class="form-control" id="materia">
-
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="profesor">Profesor:</label>
-            <select class="form-control" id="profesor">
-
-            </select>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-primary" (click)="registrarReserva()">Registrar</button>
-            <button type="button" class="btn btn-secondary" (click)="onCloseModal()">Cerrar</button>
-        </div>              
-        </form>
-    </div>
+      <div class="form-group">
+        <label for="departamento">Departamento:</label>
+        <select class="form-control" id="departamento"></select>
+      </div>
+      <div class="form-group">
+        <label for="materia">Materia:</label>
+        <select class="form-control" id="materia"></select>
+      </div>
+      <div class="form-group">
+        <label for="profesor">Profesor:</label>
+        <select class="form-control" id="profesor"></select>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="registrarReserva()"
+        >
+          Registrar
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="onCloseModal()"
+        >
+          Cerrar
+        </button>
+      </div>
+    </form>
+  </div>
 </div>

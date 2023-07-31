@@ -8,7 +8,7 @@ describe('ModalAgregarReservaComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ModalAgregarReservaComponent]
+      declarations: [ModalAgregarReservaComponent],
     });
     fixture = TestBed.createComponent(ModalAgregarReservaComponent);
     component = fixture.componentInstance;

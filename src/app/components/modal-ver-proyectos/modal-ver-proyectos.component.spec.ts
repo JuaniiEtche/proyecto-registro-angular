@@ -8,7 +8,7 @@ describe('ModalVerProyectosComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ModalVerProyectosComponent]
+      declarations: [ModalVerProyectosComponent],
     });
     fixture = TestBed.createComponent(ModalVerProyectosComponent);
     component = fixture.componentInstance;

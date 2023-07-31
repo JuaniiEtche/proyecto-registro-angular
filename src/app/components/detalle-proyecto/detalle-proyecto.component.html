@@ -1,69 +1,125 @@
 <app-cabecera-admin></app-cabecera-admin>
 <div class="container mt-5">
-    <h1 class="mb-4">Información del Proyecto: {{datos.nombre}}</h1>
-    <div class="row">
-        <div class="col-md-6 col-12">
-            <!-- Descripción -->
-            <form>
-                <div class="form-group row">
-                    <label for="descripcion" class="col-sm-3 col-form-label vertical-center">Descripción:</label>
-                    <div class="col-sm-9">
-                        <textarea class="form-control" id="descripcion" name="descripcion" rows="4" cols="50" [value]="datos.descripcion" readonly></textarea>
-                    </div>
-                </div>
-                <br>
-
-                <!-- Objetivos -->
-                <div class="form-group row">
-                    <label for="objetivos" class="col-sm-3 col-form-label vertical-center">Objetivos:</label>
-                    <div class="col-sm-9">
-                        <textarea class="form-control" id="objetivos" name="objetivos" rows="4" cols="50" [value]="datos.objetivos" readonly></textarea>
-                    </div>
-                </div>
-                <br>
-
-                <!-- Ciclo de vida -->
-                <div class="form-group row">
-                    <label for="cicloVida" class="col-sm-3 col-form-label vertical-center">Ciclo de vida:</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="cicloVida" name="cicloVida"
-                        [value]="datos.fechaInicio.split('-').reverse().join('/') + ' al ' + datos.fechaFin.split('-').reverse().join('/')" readonly>
-                    </div>
-                </div>
-                <br>
-            </form>
+  <h1 class="mb-4">Información del Proyecto: {{ datos.nombre }}</h1>
+  <div class="row">
+    <div class="col-md-6 col-12">
+      <!-- Descripción -->
+      <form>
+        <div class="form-group row">
+          <label
+            for="descripcion"
+            class="col-sm-3 col-form-label vertical-center"
+            >Descripción:</label
+          >
+          <div class="col-sm-9">
+            <textarea
+              class="form-control"
+              id="descripcion"
+              name="descripcion"
+              rows="4"
+              cols="50"
+              [value]="datos.descripcion"
+              readonly
+            ></textarea>
+          </div>
         </div>
+        <br />
 
-        <div class="col-md-6 col-12">
-            <!-- Alcance -->
-            <div class="form-group row">
-                <label for="alcance" class="col-sm-3 col-form-label vertical-center">Alcance:</label>
-                <div class="col-sm-9">
-                    <textarea class="form-control" id="alcance" name="alcance" rows="4" cols="50" [value]="datos.alcance" readonly></textarea>
-                </div>
-            </div>
-            <br>
-
-            <!-- Integrantes -->
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label vertical-center">Integrantes:</label>
-                <div class="col-sm-9">
-                    <ul>
-                        <li *ngFor="let p of datos.personas">{{p.nombre}} {{p.apellido}}</li>
-                    </ul>
-                </div>
-            </div>
-            <br>
-            <!-- Botón "Editar" -->
-            <div class="form-group row">
-                <div class="col-sm-9 offset-sm-3">
-                    <button type="button" class="btn btn-primary" (click)="openModalBecariosProyecto(datos.lineaInvestigacion,datos.nombre)">Editar integrantes</button>
-                </div>
-            </div>
-            <br>
+        <!-- Objetivos -->
+        <div class="form-group row">
+          <label for="objetivos" class="col-sm-3 col-form-label vertical-center"
+            >Objetivos:</label
+          >
+          <div class="col-sm-9">
+            <textarea
+              class="form-control"
+              id="objetivos"
+              name="objetivos"
+              rows="4"
+              cols="50"
+              [value]="datos.objetivos"
+              readonly
+            ></textarea>
+          </div>
         </div>
+        <br />
+
+        <!-- Ciclo de vida -->
+        <div class="form-group row">
+          <label for="cicloVida" class="col-sm-3 col-form-label vertical-center"
+            >Ciclo de vida:</label
+          >
+          <div class="col-sm-9">
+            <input
+              type="text"
+              class="form-control"
+              id="cicloVida"
+              name="cicloVida"
+              [value]="
+                datos.fechaInicio.split('-').reverse().join('/') +
+                ' al ' +
+                datos.fechaFin.split('-').reverse().join('/')
+              "
+              readonly
+            />
+          </div>
+        </div>
+        <br />
+      </form>
     </div>
-    <br>
+
+    <div class="col-md-6 col-12">
+      <!-- Alcance -->
+      <div class="form-group row">
+        <label for="alcance" class="col-sm-3 col-form-label vertical-center"
+          >Alcance:</label
+        >
+        <div class="col-sm-9">
+          <textarea
+            class="form-control"
+            id="alcance"
+            name="alcance"
+            rows="4"
+            cols="50"
+            [value]="datos.alcance"
+            readonly
+          ></textarea>
+        </div>
+      </div>
+      <br />
+
+      <!-- Integrantes -->
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label vertical-center"
+          >Integrantes:</label
+        >
+        <div class="col-sm-9">
+          <ul>
+            <li *ngFor="let p of datos.personas">
+              {{ p.nombre }} {{ p.apellido }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <br />
+      <!-- Botón "Editar" -->
+      <div class="form-group row">
+        <div class="col-sm-9 offset-sm-3">
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="
+              openModalBecariosProyecto(datos.lineaInvestigacion, datos.nombre)
+            "
+          >
+            Editar integrantes
+          </button>
+        </div>
+      </div>
+      <br />
+    </div>
+  </div>
+  <br />
 </div>
 
 <app-footer></app-footer>

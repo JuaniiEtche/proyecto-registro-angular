@@ -13,7 +13,6 @@ export class DataSharingService {
   }
 }
 
-
 // Servicio para compartir datos entre componentes
 // Se creo principalmente para utilizar el modal ver proyectos
 // y reciba los proyectos para mostrarse

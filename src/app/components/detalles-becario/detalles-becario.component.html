@@ -1,37 +1,36 @@
 <app-cabecera-admin></app-cabecera-admin>
 
 <div class="container mx-2">
-    <a class="btn btn-secondary" routerLink="/principal-admin" [routerLinkActive]="'active'">
-        <i class="fas fa-arrow-left"></i> Volver
-    </a>
+  <a
+    class="btn btn-secondary"
+    routerLink="/principal-admin"
+    [routerLinkActive]="'active'"
+  >
+    <i class="fas fa-arrow-left"></i> Volver
+  </a>
 </div>
 
 <div class="container">
-    <div class="content">
+  <div class="content">
+    <h1>Información del becario: {{ getApellido() }}</h1>
+    <hr />
 
-        <h1>Información del becario: {{getApellido()}}</h1>
-        <hr>
+    <h2>Datos personales</h2>
 
-        <h2>Datos personales</h2>
+    <app-becario-datos-personales></app-becario-datos-personales>
 
-        <app-becario-datos-personales></app-becario-datos-personales>
+    <hr />
 
-        <hr>
+    <h2>Datos académicos</h2>
 
+    <app-becario-datos-academicos></app-becario-datos-academicos>
 
-        <h2>Datos académicos</h2>
+    <hr />
 
-        <app-becario-datos-academicos></app-becario-datos-academicos>
+    <h2>Proyectos asignados</h2>
 
-        <hr>
-
-        <h2>Proyectos asignados</h2>
-
-        <app-becario-proyectos-asignados></app-becario-proyectos-asignados>
-    </div>
+    <app-becario-proyectos-asignados></app-becario-proyectos-asignados>
+  </div>
 </div>
-
-
-
 
 <app-footer></app-footer>

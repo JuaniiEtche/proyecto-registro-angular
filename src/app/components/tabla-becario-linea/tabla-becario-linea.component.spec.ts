@@ -8,7 +8,7 @@ describe('TablaBecarioLineaComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TablaBecarioLineaComponent]
+      declarations: [TablaBecarioLineaComponent],
     });
     fixture = TestBed.createComponent(TablaBecarioLineaComponent);
     component = fixture.componentInstance;

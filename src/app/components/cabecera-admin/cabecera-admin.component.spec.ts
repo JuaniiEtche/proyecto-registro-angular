@@ -8,7 +8,7 @@ describe('CabeceraAdminComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CabeceraAdminComponent]
+      declarations: [CabeceraAdminComponent],
     });
     fixture = TestBed.createComponent(CabeceraAdminComponent);
     component = fixture.componentInstance;

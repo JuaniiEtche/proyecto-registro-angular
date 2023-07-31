@@ -1,47 +1,82 @@
 <div class="row">
-    <div class="col">
-        <div class="form-group">
-            <label for="nombre_apellido">Nombre y Apellido:</label>
-            <input type="text" class="form-control" name="nombre_apellido" [(ngModel)]="nombreApellido" readonly>
-        </div>
+  <div class="col">
+    <div class="form-group">
+      <label for="nombre_apellido">Nombre y Apellido:</label>
+      <input
+        type="text"
+        class="form-control"
+        name="nombre_apellido"
+        [(ngModel)]="nombreApellido"
+        readonly
+      />
     </div>
-    <div class="col">
-        <div class="form-group">
-            <label for="dni">DNI: </label>
-            <input type="text" class="form-control" name="dni" [(ngModel)]="dni" readonly>
-        </div>
+  </div>
+  <div class="col">
+    <div class="form-group">
+      <label for="dni">DNI: </label>
+      <input
+        type="text"
+        class="form-control"
+        name="dni"
+        [(ngModel)]="dni"
+        readonly
+      />
     </div>
+  </div>
 </div>
 
 <div class="row">
-    <div class="col">
-        <div class="form-group">
-            <label for="telefono">Teléfono:</label>
-            <input type="text" class="form-control" name="telefono" [(ngModel)]="telefono" readonly>
-        </div>
+  <div class="col">
+    <div class="form-group">
+      <label for="telefono">Teléfono:</label>
+      <input
+        type="text"
+        class="form-control"
+        name="telefono"
+        [(ngModel)]="telefono"
+        readonly
+      />
     </div>
-    <div class="col">
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" name="email" [(ngModel)]="email" readonly>
-        </div>
+  </div>
+  <div class="col">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        [(ngModel)]="email"
+        readonly
+      />
     </div>
+  </div>
 </div>
 <div class="row">
-    <div class="col">
-        <div class="form-group">
-            <label for="legajo">Legajo:</label>
-            <input type="text" class="form-control" name="legajo" [(ngModel)]="legajo" readonly>
-        </div>
+  <div class="col">
+    <div class="form-group">
+      <label for="legajo">Legajo:</label>
+      <input
+        type="text"
+        class="form-control"
+        name="legajo"
+        [(ngModel)]="legajo"
+        readonly
+      />
     </div>
-    <div class="col">
-        <div class="form-group">
-            <label for="observaciones">Observaciones:</label>
-            <textarea class="form-control" id="observaciones" name="observaciones" readonly></textarea>
-        </div>
+  </div>
+  <div class="col">
+    <div class="form-group">
+      <label for="observaciones">Observaciones:</label>
+      <textarea
+        class="form-control"
+        id="observaciones"
+        name="observaciones"
+        readonly
+      ></textarea>
     </div>
+  </div>
 </div>
 <div>
-    <button class="btn btn-primary me-2">Editar</button>
-    <button class="btn btn-primary">Imprimir Informe</button>
+  <button class="btn btn-primary me-2">Editar</button>
+  <button class="btn btn-primary">Imprimir Informe</button>
 </div>

@@ -8,7 +8,7 @@ describe('ModalDetalleReservaComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ModalDetalleReservaComponent]
+      declarations: [ModalDetalleReservaComponent],
     });
     fixture = TestBed.createComponent(ModalDetalleReservaComponent);
     component = fixture.componentInstance;

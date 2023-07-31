@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AppRoutingModule } from './app-routing.module';
 import { PrincipalAdminComponent } from './components/principal-admin/principal-admin.component';
@@ -37,8 +37,7 @@ import { ModalDetalleReservaComponent } from './components/modal-detalle-reserva
 import { ModalRechazarReservaComponent } from './components/modal-rechazar-reserva/modal-rechazar-reserva.component';
 import { ModalBecariosProyectoComponent } from './components/modal-becarios-proyecto/modal-becarios-proyecto.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -70,7 +69,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ModalDetallesContactoComponent,
     ModalDetalleReservaComponent,
     ModalRechazarReservaComponent,
-    ModalBecariosProyectoComponent
+    ModalBecariosProyectoComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,13 +80,15 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
       config: {
         tokenGetter: () => {
           return localStorage.getItem('token');
-        }}}),
+        },
+      },
+    }),
     AppRoutingModule,
     CommonModule,
     BrowserAnimationsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
   ],
   providers: [DataSharingService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,27 +1,62 @@
 <div *ngFor="let tabla of tablas">
-  <h4><i>{{ tabla.nombreLinea }}</i></h4>
+  <h4>
+    <i>{{ tabla.nombreLinea }}</i>
+  </h4>
   <div class="col-md-12">
     <div class="table-responsive w-100">
       <table class="table tablaBecario">
         <thead class="table-light">
           <tr>
-            <th scope="col" class="table-header text-start" style="width: 15%;">BECARIO</th> <!-- Ajusta el ancho de la columna del becario -->
-            <th scope="col" class="table-header text-center" style="width: 15%;">Legajo</th> <!-- Ajusta el ancho de la columna del legajo y lo centra -->
-            <th scope="col" class="table-header text-center" style="width: 15%;">Acciones</th> <!-- Ajusta el ancho de la columna de acciones y lo centra -->
+            <th scope="col" class="table-header text-start" style="width: 15%">
+              BECARIO
+            </th>
+            <!-- Ajusta el ancho de la columna del becario -->
+            <th scope="col" class="table-header text-center" style="width: 15%">
+              Legajo
+            </th>
+            <!-- Ajusta el ancho de la columna del legajo y lo centra -->
+            <th scope="col" class="table-header text-center" style="width: 15%">
+              Acciones
+            </th>
+            <!-- Ajusta el ancho de la columna de acciones y lo centra -->
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let persona of tabla.personaDtos">
-            <td class="persona-info">{{ persona.nombre }} {{ persona.apellido }}</td>
+            <td class="persona-info">
+              {{ persona.nombre }} {{ persona.apellido }}
+            </td>
             <td class="text-center">{{ persona.legajo }}</td>
             <td class="text-center">
-              <button class="btn btn-primary me-2" routerLink="/detalle-becario" [queryParams]="{ idPersona: persona.idPersona,apellido:persona.apellido}" [routerLinkActive]="'active'">Ver Detalles</button>
-              <button class="btn btn-danger" (click)="openEliminarUsuarioLinea(persona.idPersona, tabla.nombreLinea, persona.nombre, persona.apellido)">Eliminar</button>
+              <button
+                class="btn btn-primary me-2"
+                routerLink="/detalle-becario"
+                [queryParams]="{
+                  idPersona: persona.idPersona,
+                  apellido: persona.apellido
+                }"
+                [routerLinkActive]="'active'"
+              >
+                Ver Detalles
+              </button>
+              <button
+                class="btn btn-danger"
+                (click)="
+                  openEliminarUsuarioLinea(
+                    persona.idPersona,
+                    tabla.nombreLinea,
+                    persona.nombre,
+                    persona.apellido
+                  )
+                "
+              >
+                Eliminar
+              </button>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-    <br>
+    <br />
   </div>
 </div>

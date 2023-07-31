@@ -4,21 +4,20 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-detalles-becario',
   templateUrl: './detalles-becario.component.html',
-  styleUrls: ['./detalles-becario.component.css']
+  styleUrls: ['./detalles-becario.component.css'],
 })
 export class DetallesBecarioComponent {
-  apellido: string|null="";
+  apellido: string | null = '';
 
-  constructor(private route:ActivatedRoute) {
-  }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
+    this.route.queryParams.subscribe((params) => {
       this.apellido = params['apellido'];
     });
   }
 
-  getApellido(){
+  getApellido() {
     return this.apellido;
   }
 }

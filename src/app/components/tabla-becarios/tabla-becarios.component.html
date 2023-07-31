@@ -1,24 +1,30 @@
 <table class="table" #tablaBecariosA id="tablaBecariosA">
-    <thead>
-      <tr>
-        <th>Nombre y Apellido</th>
-        <th>Dni</th>
-        <th>Telefono</th>
-        <th>Email</th>
-        <th>Legajo</th>
-        <th>Asistencia</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let becario of tabla">
-        <td>{{becario.nombre + " "+ becario.apellido}}</td>
-        <td>{{becario.dni}}</td>
-        <td>{{becario.numTelefono}}</td>
-        <td>{{becario.email}}</td>
-        <td>{{becario.legajo}}</td>
-        <td>
-          <button type="button" class="btn btn-secondary" (click)="openModalAsistencias(becario.idPersona)">Ver Asistencias</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>  
+  <thead>
+    <tr>
+      <th>Nombre y Apellido</th>
+      <th>Dni</th>
+      <th>Telefono</th>
+      <th>Email</th>
+      <th>Legajo</th>
+      <th>Asistencia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let becario of tabla">
+      <td>{{ becario.nombre + " " + becario.apellido }}</td>
+      <td>{{ becario.dni }}</td>
+      <td>{{ becario.numTelefono }}</td>
+      <td>{{ becario.email }}</td>
+      <td>{{ becario.legajo }}</td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="openModalAsistencias(becario.idPersona)"
+        >
+          Ver Asistencias
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

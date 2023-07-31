@@ -6,21 +6,23 @@ import { RegistroLinsiService } from 'src/app/services/registro-linsi.service';
 @Component({
   selector: 'app-modal-ver-proyectos',
   templateUrl: './modal-ver-proyectos.component.html',
-  styleUrls: ['./modal-ver-proyectos.component.css']
+  styleUrls: ['./modal-ver-proyectos.component.css'],
 })
 export class ModalVerProyectosComponent implements OnInit {
-  constructor(public activeModal: NgbActiveModal, private dataSharingService: DataSharingService, private registroLinsiService: RegistroLinsiService) {}
+  constructor(
+    public activeModal: NgbActiveModal,
+    private dataSharingService: DataSharingService,
+    private registroLinsiService: RegistroLinsiService
+  ) {}
   receivedData: any;
-  
-  tabla: any[] | undefined= [];
+
+  tabla: any[] | undefined = [];
 
   registrarReserva(): void {
-
     this.activeModal.close();
   }
 
   onCloseModal(): void {
-
     this.activeModal.close();
   }
 
@@ -36,15 +38,12 @@ export class ModalVerProyectosComponent implements OnInit {
   //   }, 0);
   // }
 
-
   async armarTablaProyectos(): Promise<void> {
     try {
-      const response = await this.registroLinsiService.cargarTablaProyectos(this.receivedData);
+      const response = await this.registroLinsiService.cargarTablaProyectos(
+        this.receivedData
+      );
       this.tabla = response;
-    } catch (error) {
-    }
+    } catch (error) {}
   }
-
 }
-
-

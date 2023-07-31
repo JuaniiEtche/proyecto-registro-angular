@@ -1,34 +1,51 @@
 <div class="modal-content">
-    <div class="modal-header">
-        <h5 class="modal-title" id="asistencias">Asistencias del becario</h5>
-    </div>
-    <div class="modal-body">
-        <form>
+  <div class="modal-header">
+    <h5 class="modal-title" id="asistencias">Asistencias del becario</h5>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="telefono" class="inline-label">Telefono:</label>
+            <input
+              type="text"
+              class="form-control inline-input"
+              name="telefono"
+              [value]="datos.telefono"
+              readonly
+            />
+          </div>
+        </div>
+      </div>
+      <br />
 
-            <div class="row">
-                <div class="col">
-                    <div class="form-group">
-                        <label for="telefono" class="inline-label">Telefono:</label>
-                        <input type="text" class="form-control inline-input" name="telefono" [value]="datos.telefono" readonly>
-                    </div>
-                </div>
-            </div>
-            <br>
-            
-            <div class="row">
-                <div class="col">
-                    <div class="form-group">
-                        <label for="email" class="inline-label">Email:</label>
-                        <input type="email" class="form-control inline-input" name="email" [value]="datos.email" readonly>
-                    </div>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="email" class="inline-label">Email:</label>
+            <input
+              type="email"
+              class="form-control inline-input"
+              name="email"
+              [value]="datos.email"
+              readonly
+            />
+          </div>
+        </div>
+      </div>
 
-            <br>
-        
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" (click)="onCloseModal()">Cerrar</button>
-        </div>              
-        </form>
-    </div>
+      <br />
+
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="onCloseModal()"
+        >
+          Cerrar
+        </button>
+      </div>
+    </form>
+  </div>
 </div>

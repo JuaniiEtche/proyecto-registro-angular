@@ -5,27 +5,28 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-becario-datos-academicos',
   templateUrl: './becario-datos-academicos.component.html',
-  styleUrls: ['./becario-datos-academicos.component.css']
+  styleUrls: ['./becario-datos-academicos.component.css'],
 })
 export class BecarioDatosAcademicosComponent {
   datos: any;
 
-  constructor( 
-    private registroLinsiService:RegistroLinsiService,
-    private route: ActivatedRoute){}
+  constructor(
+    private registroLinsiService: RegistroLinsiService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
+    this.route.queryParams.subscribe((params) => {
       const idPersona = params['idPersona'];
-      this.armarDatosPersonales(idPersona);    
+      this.armarDatosPersonales(idPersona);
     });
   }
 
-  async armarDatosPersonales(idPersona:number): Promise<void> {
+  async armarDatosPersonales(idPersona: number): Promise<void> {
     try {
-      const response: any = await this.registroLinsiService.cargarDatosAcademicos(idPersona);
-      this.datos=response
-    } catch (error) {
-    }
+      const response: any =
+        await this.registroLinsiService.cargarDatosAcademicos(idPersona);
+      this.datos = response;
+    } catch (error) {}
   }
 }

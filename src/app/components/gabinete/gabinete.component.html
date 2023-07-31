@@ -4,15 +4,23 @@
   <div class="content mb-4" style="margin-top: -30px">
     <div class="row">
       <div class="col-md-8">
-        <br>
+        <br />
         <app-calendario></app-calendario>
       </div>
-      <div class="col-md-4 d-flex flex-column justify-content-start align-items-center mb-4">
-        <br><br><br><br>
-        <button type="button" class="btn btn-primary mb-2" (click)="openModalAgregarReserva()">Añadir Reserva</button>
+      <div
+        class="col-md-4 d-flex flex-column justify-content-start align-items-center mb-4"
+      >
+        <br /><br /><br /><br />
+        <button
+          type="button"
+          class="btn btn-primary mb-2"
+          (click)="openModalAgregarReserva()"
+        >
+          Añadir Reserva
+        </button>
       </div>
     </div>
-    <hr>
+    <hr />
     <app-reservas-pendientes></app-reservas-pendientes>
   </div>
 </div>

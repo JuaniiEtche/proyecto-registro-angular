@@ -1,18 +1,27 @@
 <div class="modal-content">
   <div class="modal-header">
-      <h5 class="modal-title" id="asistencias">Confirmación de rechazo</h5>
+    <h5 class="modal-title" id="asistencias">Confirmación de rechazo</h5>
   </div>
   <div class="modal-body">
-    <h4>¿Está seguro de que desea rechazar la reserva del profesor {{ reserva.apellido }} {{ reserva.nombre }}?</h4>
+    <h4>
+      ¿Está seguro de que desea rechazar la reserva del profesor
+      {{ reserva.apellido }} {{ reserva.nombre }}?
+    </h4>
     <p>- Materia: {{ reserva.materia }}</p>
     <p>- Fecha: {{ reserva.fecha }}</p>
-    
-    <br>
+
+    <br />
     <div class="modal-footer">
-      <button type="button" class="btn btn-primary" (click)="onCloseModal()">Cerrar</button>
-      <button type="button" class="btn btn-danger" (click)="rechazar(reserva.id)">Continuar</button>      </div>              
+      <button type="button" class="btn btn-primary" (click)="onCloseModal()">
+        Cerrar
+      </button>
+      <button
+        type="button"
+        class="btn btn-danger"
+        (click)="rechazar(reserva.id)"
+      >
+        Continuar
+      </button>
+    </div>
   </div>
 </div>
-
-
-

@@ -2,24 +2,48 @@
   <!-- Logo visible en pantallas medianas y grandes -->
   <a class="navbar-brand d-none d-lg-block">Laboratorio Linsi</a>
   <!-- Botón para desplegar el menú en pantallas pequeñas -->
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse custom-navbar-collapse" id="navbarNav">
     <!-- Opciones del menú -->
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/principal-admin" [routerLinkActive]="'active'">Inicio</a>
+        <a
+          class="nav-link"
+          routerLink="/principal-admin"
+          [routerLinkActive]="'active'"
+          >Inicio</a
+        >
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/listado-becarios" [routerLinkActive]="'active'">Becarios</a>
+        <a
+          class="nav-link"
+          routerLink="/listado-becarios"
+          [routerLinkActive]="'active'"
+          >Becarios</a
+        >
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/listado-lineas" [routerLinkActive]="'active'">Lineas de investigación</a>
+        <a
+          class="nav-link"
+          routerLink="/listado-lineas"
+          [routerLinkActive]="'active'"
+          >Lineas de investigación</a
+        >
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/gabinete" [routerLinkActive]="'active'">Reserva de Gabinetes</a>
+        <a class="nav-link" routerLink="/gabinete" [routerLinkActive]="'active'"
+          >Reserva de Gabinetes</a
+        >
       </li>
     </ul>
   </div>
@@ -28,64 +52,108 @@
   <ul class="navbar-nav ml-auto">
     <!-- Nav Item - Alerts -->
     <li class="nav-item dropdown no-arrow mx-1">
-      <a class="nav-link dropdown-toggle" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a
+        class="nav-link dropdown-toggle"
+        id="alertsDropdown"
+        role="button"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
         <i class="fas fa-bell fa-fw"></i>
         <span class="badge badge-danger badge-counter">3+</span>
       </a>
       <!-- Dropdown - Alerts -->
-      <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-          aria-labelledby="alertsDropdown">
-          <h6 class="dropdown-header">
-              Alerts Center
-          </h6>
-          <!-- Contenido del Dropdown - Alerts -->
-          <!-- Aquí puedes colocar el contenido específico del Dropdown de Alerts si lo deseas -->
-          <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+      <div
+        class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+        aria-labelledby="alertsDropdown"
+      >
+        <h6 class="dropdown-header">Alerts Center</h6>
+        <!-- Contenido del Dropdown - Alerts -->
+        <!-- Aquí puedes colocar el contenido específico del Dropdown de Alerts si lo deseas -->
+        <a class="dropdown-item text-center small text-gray-500" href="#"
+          >Show All Alerts</a
+        >
       </div>
     </li>
 
     <!-- Nav Item - Messages -->
     <li class="nav-item dropdown no-arrow mx-1">
-      <a class="nav-link dropdown-toggle" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a
+        class="nav-link dropdown-toggle"
+        id="messagesDropdown"
+        role="button"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
         <i class="fas fa-envelope fa-fw"></i>
         <span class="badge badge-danger badge-counter">7</span>
       </a>
       <!-- Dropdown - Messages -->
-      <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-          aria-labelledby="messagesDropdown">
-          <h6 class="dropdown-header">
-              Message Center
-          </h6>
-          <!-- Contenido del Dropdown - Messages -->
-          <!-- Aquí puedes colocar el contenido específico del Dropdown de Messages si lo deseas -->
-          <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+      <div
+        class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+        aria-labelledby="messagesDropdown"
+      >
+        <h6 class="dropdown-header">Message Center</h6>
+        <!-- Contenido del Dropdown - Messages -->
+        <!-- Aquí puedes colocar el contenido específico del Dropdown de Messages si lo deseas -->
+        <a class="dropdown-item text-center small text-gray-500" href="#"
+          >Read More Messages</a
+        >
       </div>
     </li>
 
     <!-- Nav Item - User Information -->
     <li class="nav-item dropdown no-arrow">
       <!-- Contenido del menú desplegable -->
-      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false" data-bs-auto-close="outside">
-        <span class="mr-2 d-none d-lg-inline text-gray-600 small" style="font-size: 15px;">{{getNombreUsuario()}}</span>
-        <img class="img-profile rounded-circle" src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/img/undraw_profile.svg" alt="Profile Image">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+        data-bs-auto-close="outside"
+      >
+        <span
+          class="mr-2 d-none d-lg-inline text-gray-600 small"
+          style="font-size: 15px"
+          >{{ getNombreUsuario() }}</span
+        >
+        <img
+          class="img-profile rounded-circle"
+          src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/img/undraw_profile.svg"
+          alt="Profile Image"
+        />
       </a>
-      <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-            aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="#">
-                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                Perfil
-            </a>
-            <a class="dropdown-item" href="#">
-                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                Configuración
-            </a>
-            <!-- <a class="dropdown-item" href="#">
+      <div
+        class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+        aria-labelledby="userDropdown"
+      >
+        <a class="dropdown-item" href="#">
+          <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+          Perfil
+        </a>
+        <a class="dropdown-item" href="#">
+          <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+          Configuración
+        </a>
+        <!-- <a class="dropdown-item" href="#">
                 <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                 Activity Log
             </a> -->
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                Cerrar sesión
-            </a>
+        <div class="dropdown-divider"></div>
+        <a
+          class="dropdown-item"
+          href="#"
+          data-toggle="modal"
+          data-target="#logoutModal"
+        >
+          <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+          Cerrar sesión
+        </a>
+      </div>
+    </li>
+  </ul>
+</nav>

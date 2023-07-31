@@ -8,7 +8,7 @@ describe('ListadoLineasComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ListadoLineasComponent]
+      declarations: [ListadoLineasComponent],
     });
     fixture = TestBed.createComponent(ListadoLineasComponent);
     component = fixture.componentInstance;

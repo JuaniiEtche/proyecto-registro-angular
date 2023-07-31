@@ -4,30 +4,25 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-cabecera-user',
   templateUrl: './cabecera-user.component.html',
-  styleUrls: ['./cabecera-user.component.css']
+  styleUrls: ['./cabecera-user.component.css'],
 })
 export class CabeceraUserComponent {
+  constructor(private router: Router) {}
 
-  constructor(private router:Router){
-
-  }
-
-  
-  nombre: string|null="";
+  nombre: string | null = '';
 
   ngOnInit(): void {
     this.nombre = localStorage.getItem('usuario');
   }
 
-  getNombreUsuario(){
+  getNombreUsuario() {
     return this.nombre;
   }
 
-  cerrarSesion():void{
-    localStorage.removeItem("token");
-    localStorage.removeItem("usuario");
+  cerrarSesion(): void {
+    localStorage.removeItem('token');
+    localStorage.removeItem('usuario');
 
-    this.router.navigate([""])
+    this.router.navigate(['']);
   }
-
 }

@@ -8,7 +8,7 @@ describe('TablaLineasComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TablaLineasComponent]
+      declarations: [TablaLineasComponent],
     });
     fixture = TestBed.createComponent(TablaLineasComponent);
     component = fixture.componentInstance;

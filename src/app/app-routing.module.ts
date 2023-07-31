@@ -11,20 +11,48 @@ import { DetallesBecarioComponent } from './components/detalles-becario/detalles
 import { DetalleProyectoComponent } from './components/detalle-proyecto/detalle-proyecto.component';
 import { authGuard } from './auth.guard';
 const routes: Routes = [
-  { path:'', component: HomeComponent},
-  { path: 'principal-admin', component: PrincipalAdminComponent,canActivate:[authGuard] },
-  { path: 'principal-user', component: PrincipalUserComponent,canActivate:[authGuard]},
-  { path: 'asistencia-becario', component:AsistenciaBecarioComponent,canActivate:[authGuard]},
-  { path: 'listado-becarios', component:ListadoBecariosComponent,canActivate:[authGuard]},
-  { path: 'listado-lineas', component:ListadoLineasComponent,canActivate:[authGuard]},
-  { path: 'gabinete', component: GabineteComponent,canActivate:[authGuard]},
-  { path: 'detalle-becario',component:DetallesBecarioComponent,canActivate:[authGuard]},
-  { path: 'detalle-proyecto',component:DetalleProyectoComponent,canActivate:[authGuard]}
+  { path: '', component: HomeComponent },
+  {
+    path: 'principal-admin',
+    component: PrincipalAdminComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'principal-user',
+    component: PrincipalUserComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'asistencia-becario',
+    component: AsistenciaBecarioComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'listado-becarios',
+    component: ListadoBecariosComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'listado-lineas',
+    component: ListadoLineasComponent,
+    canActivate: [authGuard],
+  },
+  { path: 'gabinete', component: GabineteComponent, canActivate: [authGuard] },
+  {
+    path: 'detalle-becario',
+    component: DetallesBecarioComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'detalle-proyecto',
+    component: DetalleProyectoComponent,
+    canActivate: [authGuard],
+  },
 ];
 
 @NgModule({
   declarations: [],
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

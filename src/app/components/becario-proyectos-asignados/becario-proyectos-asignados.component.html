@@ -1,26 +1,36 @@
 <table class="table" id="tablaProyectos">
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Ciclo de vida</th>
-            <th>Línea de investigación</th>
-            <th>detalle</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let proyecto of proyectos">
-            <td>{{ proyecto.nombre }}</td>
-            <td>{{ proyecto.descripcion }}</td>
-            <td>{{ proyecto.fechaInicio | date: 'dd/MM/yyyy' }} - {{ proyecto.fechaFin | date: 'dd/MM/yyyy' }}</td>
-            <td>{{ proyecto.lineaInvestigacion }}</td>
-            <td>
-                <button class="btn btn-secondary" routerLink="/detalle-proyecto" [queryParams]="{ idProyecto: proyecto.idProyecto}" [routerLinkActive]="'active'">Ver Detalle</button>
-            </td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Ciclo de vida</th>
+      <th>Línea de investigación</th>
+      <th>detalle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let proyecto of proyectos">
+      <td>{{ proyecto.nombre }}</td>
+      <td>{{ proyecto.descripcion }}</td>
+      <td>
+        {{ proyecto.fechaInicio | date : "dd/MM/yyyy" }} -
+        {{ proyecto.fechaFin | date : "dd/MM/yyyy" }}
+      </td>
+      <td>{{ proyecto.lineaInvestigacion }}</td>
+      <td>
+        <button
+          class="btn btn-secondary"
+          routerLink="/detalle-proyecto"
+          [queryParams]="{ idProyecto: proyecto.idProyecto }"
+          [routerLinkActive]="'active'"
+        >
+          Ver Detalle
+        </button>
+      </td>
+    </tr>
+  </tbody>
 </table>
 <div>
-    <button class="btn btn-primary">Imprimir Informe</button>
+  <button class="btn btn-primary">Imprimir Informe</button>
 </div>
-<br>
+<br />

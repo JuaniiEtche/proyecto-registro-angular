@@ -1,17 +1,27 @@
 <div class="modal-content">
-    <div class="modal-header">
-        <h5 class="modal-title" id="asistencias">Confirmación de Eliminar Becario</h5>
-    </div>
-    <div class="modal-body">
-      <p>Está a punto de eliminar a <b>{{ persona.apellidoBecario }} {{ persona.nombreBecario }}</b> de {{ persona.nombreLinea }}</p>
-      
-        <div class="modal-footer">
-            <button type="button" class="btn btn-primary" (click)="onCloseModal()">Cerrar</button>
-            <button type="button" class="btn btn-danger" (click)="eliminarBecarioLinea(persona.id,persona.nombreLinea)">Continuar</button>      
-        </div>              
+  <div class="modal-header">
+    <h5 class="modal-title" id="asistencias">
+      Confirmación de Eliminar Becario
+    </h5>
+  </div>
+  <div class="modal-body">
+    <p>
+      Está a punto de eliminar a
+      <b>{{ persona.apellidoBecario }} {{ persona.nombreBecario }}</b> de
+      {{ persona.nombreLinea }}
+    </p>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="onCloseModal()">
+        Cerrar
+      </button>
+      <button
+        type="button"
+        class="btn btn-danger"
+        (click)="eliminarBecarioLinea(persona.id, persona.nombreLinea)"
+      >
+        Continuar
+      </button>
     </div>
   </div>
-  
-  
-  
-  
+</div>

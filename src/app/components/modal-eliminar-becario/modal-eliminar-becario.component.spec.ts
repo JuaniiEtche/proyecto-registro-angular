@@ -8,7 +8,7 @@ describe('ModalEliminarBecarioComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ModalEliminarBecarioComponent]
+      declarations: [ModalEliminarBecarioComponent],
     });
     fixture = TestBed.createComponent(ModalEliminarBecarioComponent);
     component = fixture.componentInstance;
