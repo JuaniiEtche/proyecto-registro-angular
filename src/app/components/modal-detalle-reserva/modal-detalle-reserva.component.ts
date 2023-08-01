@@ -16,6 +16,7 @@ export class ModalDetalleReservaComponent {
   departamento: any;
   telefono: any;
   email: any;
+  materia: any;
 
   imagenEditar: any = '../assets/images/editar-logo.png';
 
@@ -38,6 +39,7 @@ export class ModalDetalleReservaComponent {
     this.telefono =
       this.selectedEvento['event']['_def']['extendedProps']['telefono'];
     this.email = this.selectedEvento['event']['_def']['extendedProps']['email'];
+    this.materia = this.selectedEvento['event']['title'];
 
     const fechaInicio = new Date(this.selectedEvento.event.start);
     const fechaFin = new Date(this.selectedEvento.event.end);

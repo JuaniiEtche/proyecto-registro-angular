@@ -9,18 +9,22 @@
     </h4>
     <p>- Materia: {{ reserva.materia }}</p>
     <p>- Fecha: {{ reserva.fecha }}</p>
+    <p>
+      - Horario: {{ reserva.horaInicio.slice(0, -3) }} -
+      {{ reserva.horaFin.slice(0, -3) }}
+    </p>
 
     <br />
     <div class="modal-footer">
-      <button type="button" class="btn btn-primary" (click)="onCloseModal()">
-        Cerrar
-      </button>
       <button
         type="button"
         class="btn btn-danger"
         (click)="rechazar(reserva.id)"
       >
         Continuar
+      </button>
+      <button type="button" class="btn btn-primary" (click)="onCloseModal()">
+        Cerrar
       </button>
     </div>
   </div>

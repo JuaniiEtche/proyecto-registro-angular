@@ -5,6 +5,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import { DataSharingService } from 'src/app/services/data-sharing-service.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalDetalleReservaComponent } from '../modal-detalle-reserva/modal-detalle-reserva.component';
+import interactionPlugin from '@fullcalendar/interaction';
 
 @Component({
   selector: 'app-calendario',
@@ -81,8 +82,13 @@ export class CalendarioComponent {
         }
 
         this.calendar = new Calendar(this.calendarEl.nativeElement, {
-          plugins: [dayGridPlugin],
+          plugins: [dayGridPlugin, interactionPlugin],
           defaultView: 'dayGridMonth',
+          header: {
+            left: 'title ',
+            center: '',
+            right: 'myCustomButton prev,next',
+          },
           events: this.eventos,
           eventClick: (info: any) => {
             this.mostrarDetallesEvento(info.event);

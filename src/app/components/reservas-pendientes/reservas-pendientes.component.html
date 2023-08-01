@@ -14,7 +14,7 @@
   <tbody>
     <tr *ngFor="let reserva of tablaPendiente">
       <td>{{ reserva.idReserva }}</td>
-      <td>{{ reserva.apellidoDocente }}</td>
+      <td>{{ reserva.apellidoDocente }} {{ reserva.nombreDocente }}</td>
       <td>{{ reserva.nombreMateria }}</td>
       <td>{{ reserva.fecha }}</td>
       <td>
@@ -47,7 +47,9 @@
               reserva.apellidoDocente,
               reserva.nombreDocente,
               reserva.nombreMateria,
-              reserva.fecha
+              reserva.fecha,
+              reserva.horaInicio,
+              reserva.horaFin
             )
           "
         >

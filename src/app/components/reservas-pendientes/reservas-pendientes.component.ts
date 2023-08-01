@@ -68,7 +68,9 @@ export class ReservasPendientesComponent {
     apellidoDocente: string,
     nombreDocente: string,
     materia: string,
-    fecha: any
+    fecha: any,
+    horaInicio: any,
+    horaFin: any
   ) {
     const modalRef = this.modalService.open(ModalRechazarReservaComponent);
     const dataToSend = {
@@ -76,6 +78,8 @@ export class ReservasPendientesComponent {
       nombre: nombreDocente,
       materia: materia,
       fecha: fecha,
+      horaInicio: horaInicio,
+      horaFin: horaFin,
       id: idReserva,
     };
     this.dataSharingService.setData(dataToSend);
