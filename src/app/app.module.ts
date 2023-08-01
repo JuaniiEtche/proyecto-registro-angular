@@ -38,6 +38,16 @@ import { ModalRechazarReservaComponent } from './components/modal-rechazar-reser
 import { ModalBecariosProyectoComponent } from './components/modal-becarios-proyecto/modal-becarios-proyecto.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -87,6 +97,17 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     CommonModule,
     BrowserAnimationsModule,
     MatCheckboxModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatIconModule,
+    MatDividerModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule,
   ],
   providers: [DataSharingService],
   bootstrap: [AppComponent],

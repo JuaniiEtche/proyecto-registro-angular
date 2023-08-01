@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@angular/material/dialog';
 import { ModalAgregarReservaComponent } from '../modal-agregar-reserva/modal-agregar-reserva.component';
 
 @Component({
@@ -8,9 +8,14 @@ import { ModalAgregarReservaComponent } from '../modal-agregar-reserva/modal-agr
   styleUrls: ['./gabinete.component.css'],
 })
 export class GabineteComponent {
-  constructor(private modalService: NgbModal) {}
+  constructor(private dialog: MatDialog) {}
 
   openModalAgregarReserva() {
-    const modalRef = this.modalService.open(ModalAgregarReservaComponent);
+    const dialogRef = this.dialog.open(ModalAgregarReservaComponent);
+
+    // Opcional: Puedes suscribirte a eventos del modal si lo necesitas.
+    dialogRef.afterClosed().subscribe((result) => {
+      // Aquí puedes realizar acciones después de cerrar el modal si es necesario.
+    });
   }
 }

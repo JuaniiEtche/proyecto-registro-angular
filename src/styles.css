@@ -4,3 +4,15 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
+.mat-dialog-title {
+    padding: 10px 15px; /* Añadir padding para separar el título del borde superior */
+  }
+  
+  .mat-dialog-content {
+    padding: 0 24px 24px; /* Añadir padding en la parte inferior del contenido del formulario */
+  }
+  
+  .mat-dialog-actions {
+    padding: 0 24px 20px; /* Añadir padding en la parte inferior de los botones */
+    justify-content: flex-end; /* Alinear los botones a la derecha */
+  }

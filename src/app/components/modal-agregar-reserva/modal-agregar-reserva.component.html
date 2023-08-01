@@ -1,70 +1,122 @@
-<div class="modal-content">
-  <div class="modal-header">
-    <h5 class="modal-title" id="reservaModalLabel">Registrar Reserva</h5>
-  </div>
-  <div class="modal-body">
-    <form>
-      <div class="form-group">
-        <label for="fecha">Fecha:</label>
+<h2 class="mat-dialog-title">Registrar Reserva</h2>
+<mat-divider></mat-divider>
+
+<mat-dialog-content>
+  <form>
+    <section>
+      <h4>Selecciona fecha y hora</h4>
+      <mat-form-field>
+        <mat-label>Elija una fecha</mat-label>
         <input
-          type="date"
-          class="form-control"
-          id="fecha"
-          placeholder="Seleccione una fecha"
+          [(ngModel)]="fecha"
+          name="fecha"
+          matInput
+          [matDatepicker]="picker"
         />
-      </div>
-      <div class="form-group">
-        <label for="horario">Horario inicio:</label>
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <br />
+
+      <br />
+
+      <mat-form-field class="me-2">
+        <mat-label>Horario inicio:</mat-label>
         <input
+          matInput
+          [(ngModel)]="horaInicio"
+          name="fechaInicio"
           type="time"
-          class="form-control"
-          id="horario"
           placeholder="Seleccione un horario de inicio"
         />
-      </div>
-      <div class="form-group">
-        <label for="horarioFin">Horario Fin:</label>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Horario Fin:</mat-label>
         <input
+          [(ngModel)]="horaFin"
+          name="horaFin"
+          matInput
           type="time"
-          class="form-control"
-          id="horarioFin"
           placeholder="Seleccione un horario de fin"
         />
-      </div>
-      <div class="form-group">
-        <label>Gabinetes:</label>
-        <div id="checkboxesGabinetes"></div>
-        <span id="contadorEquipos">Cantidad total de equipos: 0</span>
-      </div>
+      </mat-form-field>
+    </section>
 
-      <div class="form-group">
-        <label for="departamento">Departamento:</label>
-        <select class="form-control" id="departamento"></select>
-      </div>
-      <div class="form-group">
-        <label for="materia">Materia:</label>
-        <select class="form-control" id="materia"></select>
-      </div>
-      <div class="form-group">
-        <label for="profesor">Profesor:</label>
-        <select class="form-control" id="profesor"></select>
-      </div>
-      <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-primary"
-          (click)="registrarReserva()"
+    <mat-divider></mat-divider>
+    <br />
+
+    <section class="gabinetes-section">
+      <h4>Selecciona gabinetes</h4>
+      <section *ngFor="let g of gabinetes">
+        <mat-checkbox
+          [(ngModel)]="gabinetesSeleccionados[g.nombre]"
+          [value]="g"
+          name="gabinetesSeleccionados"
+          (change)="cambiarContador(g)"
         >
-          Registrar
-        </button>
-        <button
-          type="button"
-          class="btn btn-secondary"
-          (click)="onCloseModal()"
+          {{ g.nombre }} ({{ g.cantidadEquipos }} equipos)
+        </mat-checkbox>
+      </section>
+    </section>
+    <span>Cantidad total de equipos: {{ contadorEquipos }}</span>
+    <mat-divider></mat-divider>
+    <br />
+    <section>
+      <h4>Selecciona materia y profesor a cargo</h4>
+      <mat-form-field class="me-3 select-field">
+        <mat-label>Departamento:</mat-label>
+        <mat-select
+          [(ngModel)]="departamento"
+          name="departamento"
+          (selectionChange)="cargarMaterias(departamento)"
         >
-          Cerrar
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
+          <mat-option *ngFor="let d of departamentos" [value]="d.nombre">{{
+            d.nombre
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </section>
+    <section>
+      <mat-form-field class="me-3 select-field">
+        <mat-label>Materia:</mat-label>
+        <mat-select
+          [(ngModel)]="materia"
+          name="materia"
+          (selectionChange)="cargarProfesores(materia)"
+        >
+          <mat-option *ngFor="let materia of materias" [value]="materia">{{
+            materia
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </section>
+    <section>
+      <mat-form-field class="select-field">
+        <mat-label>Profesor:</mat-label>
+        <mat-select
+          [(ngModel)]="profesor"
+          name="profesor"
+          (selectionChange)="cargarProfesores(materia)"
+        >
+          <mat-option
+            *ngFor="let profesor of profesores"
+            [value]="profesor.nombre + ' ' + profesor.apellido"
+          >
+            {{ profesor.apellido }} {{ profesor.nombre }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </section>
+  </form>
+</mat-dialog-content>
+<mat-divider></mat-divider>
+
+<mat-dialog-actions align="end">
+  <button class="btn btn-primary me-2" (click)="registrarReserva()">
+    Registrar
+  </button>
+  <button class="btn btn-secondary" (click)="onCloseModal()">Cerrar</button>
+</mat-dialog-actions>

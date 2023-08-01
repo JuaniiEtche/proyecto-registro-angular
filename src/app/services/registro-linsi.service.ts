@@ -231,4 +231,77 @@ export class RegistroLinsiService {
       )
       .toPromise();
   }
+
+  cargarDepartamentos() {
+    //Para Modal Becario Proyecto que se usa para editar integrantes
+
+    const tokenJWT = localStorage.getItem('token');
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${tokenJWT}`,
+    });
+
+    return this.http
+      .get<any[]>(this.ip + '/admin/departamento', { headers })
+      .toPromise();
+  }
+
+  cargarProfesores(materia: string) {
+    //Para Modal Becario Proyecto que se usa para editar integrantes
+
+    const tokenJWT = localStorage.getItem('token');
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${tokenJWT}`,
+    });
+
+    return this.http
+      .get<any[]>(this.ip + '/admin/docente/' + materia, { headers })
+      .toPromise();
+  }
+  cargarGabinetes() {
+    //Para Modal Becario Proyecto que se usa para editar integrantes
+
+    const tokenJWT = localStorage.getItem('token');
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${tokenJWT}`,
+    });
+
+    return this.http
+      .get<any[]>(this.ip + '/admin/gabinete', { headers })
+      .toPromise();
+  }
+
+  agregarReserva(
+    fecha: any,
+    horaInicio: any,
+    horaFin: any,
+    nombreMateria: any,
+    nombreDepartamento: any,
+    nombreDocente: any,
+    apellidoDocente: any,
+    gabinetes: any
+  ) {
+    const tokenJWT = localStorage.getItem('token');
+
+    const datos = {
+      fecha: fecha,
+      horaInicio: horaInicio,
+      horaFin: horaFin,
+      nombreMateria: nombreMateria,
+      nombreDepartamento: nombreDepartamento,
+      nombreDocente: nombreDocente,
+      apellidoDocente: apellidoDocente,
+      nombreGabinete: gabinetes,
+    };
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${tokenJWT}`,
+    });
+
+    return this.http
+      .post<any>(this.ip + '/admin/reserva', datos, { headers })
+      .toPromise();
+  }
 }
