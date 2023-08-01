@@ -41,6 +41,7 @@
                   <mat-checkbox
                     [color]="'primary'"
                     [checked]="becario.pertenece === 1"
+                    (change)="toggleCheck(becario)"
                   ></mat-checkbox>
                 </td>
               </tr>
@@ -48,6 +49,13 @@
           </tbody>
         </table>
         <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="guardarCambios()"
+          >
+            Guardar
+          </button>
           <button
             type="button"
             class="btn btn-secondary"

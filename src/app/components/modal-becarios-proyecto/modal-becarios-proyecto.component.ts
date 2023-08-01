@@ -16,7 +16,8 @@ export class ModalBecariosProyectoComponent implements OnInit {
     private registroLinsiService: RegistroLinsiService
   ) {}
   receivedData: any;
-  datos: any[] | undefined = [];
+  datos: any[] = [];
+  selectedLegajos: string[] = [];
 
   onCloseModal(): void {
     this.activeModal.close(); // Cierra el Modal
@@ -58,5 +59,30 @@ export class ModalBecariosProyectoComponent implements OnInit {
         { targets: [0, 1, 2], orderable: true },
       ],
     });
+  }
+
+  async guardarCambios() {
+    const legajosConCheck: number[] = [];
+    const legajosSinCheck: number[] = [];
+    // Guarda los legajos de los alumnos seleccionados en el array legajosConCheck y legajosSinCheck
+    this.datos[0]?.personaDtos.forEach((becario: any) => {
+      if (becario.pertenece === 1) {
+        legajosConCheck.push(becario.legajo);
+      } else {
+        legajosSinCheck.push(becario.legajo);
+      }
+    });
+
+    await this.registroLinsiService.modificarIntegrantes(
+      legajosConCheck,
+      legajosSinCheck,
+      this.receivedData.nombreProyecto
+    );
+
+    window.location.reload();
+  }
+  toggleCheck(becario: any) {
+    // Alterna la propiedad 'pertenece' del objeto becario cuando cambia el estado de la casilla de verificación
+    becario.pertenece = becario.pertenece === 1 ? 0 : 1;
   }
 }

@@ -304,4 +304,26 @@ export class RegistroLinsiService {
       .post<any>(this.ip + '/admin/reserva', datos, { headers })
       .toPromise();
   }
+
+  modificarIntegrantes(
+    listaLegajosConCheck: any,
+    listaLegajosSinCheck: any,
+    nombreProyecto: string
+  ) {
+    const tokenJWT = localStorage.getItem('token');
+
+    const datos = {
+      listaLegajosConCheck: listaLegajosConCheck,
+      listaLegajosSinCheck: listaLegajosSinCheck,
+      nombreProyecto: nombreProyecto,
+    };
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${tokenJWT}`,
+    });
+
+    return this.http
+      .post<any>(this.ip + '/admin/proyecto/integrantes', datos, { headers })
+      .toPromise();
+  }
 }
