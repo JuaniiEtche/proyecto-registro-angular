@@ -30,12 +30,14 @@ export class ModalAgregarReservaComponent {
   materias: any[] | undefined = [];
   profesores: any[] | undefined = [];
 
+  gabinetesAMandar: string[] = [];
+
   async ngOnInit(): Promise<void> {
     await this.cargarDepartamentos();
     await this.cargarGabinetes();
   }
   async registrarReserva() {
-    const gabinetesAMandar = await Object.keys(this.gabinetesSeleccionados);
+    this.gabinetesAMandar = await Object.keys(this.gabinetesSeleccionados);
 
     if (this.fecha == null) {
       const mensaje = 'No se ha introducido una fecha valida';
@@ -71,8 +73,7 @@ export class ModalAgregarReservaComponent {
       this.gabinetesSeleccionados = [];
       return;
     }
-    console.log(gabinetesAMandar.length);
-    if (gabinetesAMandar.length == 0) {
+    if (this.gabinetesAMandar.length == 0) {
       const mensaje = 'No se han seleccionado gabinetes a reservar';
       const accion = 'Aceptar';
       this.openSnackBar(mensaje, accion);
@@ -99,7 +100,6 @@ export class ModalAgregarReservaComponent {
       this.openSnackBar(mensaje, accion);
       return;
     }
-
     const response = await this.registroLinsiService.agregarReserva(
       this.fecha,
       this.horaInicio,
@@ -108,7 +108,7 @@ export class ModalAgregarReservaComponent {
       this.departamento,
       this.profesor?.split(' ')[0],
       this.profesor?.split(' ')[1],
-      gabinetesAMandar
+      this.gabinetesAMandar
     );
     this.departamentos = response;
 
@@ -145,17 +145,15 @@ export class ModalAgregarReservaComponent {
   }
 
   cambiarContador(g: any) {
-    const index = this.gabinetesSeleccionados.findIndex(
-      (gabinete) => gabinete.nombre === g.nombre
-    );
+    const index = this.gabinetesAMandar.indexOf(g.nombre);
 
     if (index !== -1) {
       // Si el gabinete ya está seleccionado, lo eliminamos del array
-      this.gabinetesSeleccionados.splice(index, 1);
+      this.gabinetesAMandar.splice(index, 1);
       this.contadorEquipos -= g.cantidadEquipos;
     } else {
       // Si el gabinete no está seleccionado, lo agregamos al array
-      this.gabinetesSeleccionados.push(g);
+      this.gabinetesAMandar.push(g.nombre);
       this.contadorEquipos += g.cantidadEquipos;
     }
   }

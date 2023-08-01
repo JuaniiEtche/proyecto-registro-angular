@@ -25,8 +25,6 @@ export class DetalleProyectoComponent {
       this.idProyecto = params['idProyecto'];
     });
     await this.cargarDatosProyecto(this.idProyecto);
-    console.log(this.datos.fechaFin);
-    console.log(this.datos.fechaInicio);
   }
 
   async cargarDatosProyecto(idProyecto: number): Promise<void> {
