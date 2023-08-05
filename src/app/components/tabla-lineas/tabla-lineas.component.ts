@@ -42,6 +42,7 @@ export class TablaLineasComponent {
         { searchable: false },
         { searchable: false }, // Columna 2 - No se permitirá la búsqueda
         { searchable: false }, // Columna 3 - No se permitirá la búsqueda
+        { searchable: false }, // Columna 4 - No se permitirá la búsqueda
       ],
       columnDefs: [{ targets: [1, 2], orderable: false }],
       lengthMenu: [5, 10, 25, 50], // Modificar las opciones de cantidad de registros

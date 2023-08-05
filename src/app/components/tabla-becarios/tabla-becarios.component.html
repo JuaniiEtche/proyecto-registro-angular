@@ -7,6 +7,7 @@
       <th>Email</th>
       <th>Legajo</th>
       <th>Asistencia</th>
+      <th>Acciones</th>
     </tr>
   </thead>
   <tbody>
@@ -18,11 +19,21 @@
       <td>{{ becario.legajo }}</td>
       <td>
         <button
-          type="button"
-          class="btn btn-secondary"
+          mat-raised-button
+          color="accent"
+          matTooltip="Ver Asistencias"
           (click)="openModalAsistencias(becario.idPersona)"
         >
+          <mat-icon>visibility</mat-icon>
           Ver Asistencias
+        </button>
+      </td>
+      <td>
+        <button class="me-2" mat-raised-button color="primary">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-raised-button color="warn">
+          <mat-icon>delete</mat-icon>
         </button>
       </td>
     </tr>

@@ -19,7 +19,6 @@
               <th>Código</th>
               <th>Nombre</th>
               <th>Ver</th>
-              <!-- //Botón Ver Detalle -->
               <th>
                 <div class="form-check">
                   <label class="form-check-label" for="checkboxCompletado">
@@ -27,6 +26,7 @@
                   </label>
                 </div>
               </th>
+              <th>Acciones</th>
             </tr>
           </thead>
 
@@ -36,17 +36,32 @@
               <td>{{ proyecto.nombre }}</td>
               <td>
                 <button
-                  class="btn btn-primary"
+                  mat-raised-button
+                  color="accent"
                   routerLink="/detalle-proyecto"
                   [queryParams]="{ idProyecto: proyecto.idProyecto }"
                   [routerLinkActive]="'active'"
                   (click)="onCloseModal()"
                 >
+                  <mat-icon>visibility</mat-icon>
                   Ver Detalle
                 </button>
               </td>
               <td>
                 <mat-checkbox [color]="'primary'"></mat-checkbox>
+              </td>
+              <td>
+                <button
+                  class="me-2"
+                  mat-raised-button
+                  color="primary"
+                  class="me-2"
+                >
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-raised-button color="warn">
+                  <mat-icon>delete</mat-icon>
+                </button>
               </td>
             </tr>
           </tbody>

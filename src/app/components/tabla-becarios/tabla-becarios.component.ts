@@ -45,6 +45,7 @@ export class TablaBecariosComponent implements AfterViewInit {
         { searchable: false },
         { searchable: false },
         { searchable: false },
+        { searchable: false },
       ],
       columnDefs: [{ targets: [5], orderable: false }],
       lengthMenu: [5, 10, 25, 50], // Modificar las opciones de cantidad de registros
