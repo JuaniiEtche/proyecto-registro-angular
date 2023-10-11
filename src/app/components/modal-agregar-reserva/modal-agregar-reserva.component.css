@@ -1,4 +1,3 @@
-.select-field {
+.select-field, .label-field {
     width: 100%; /* O cualquier otro valor que desees para el ancho */
   }
-  
