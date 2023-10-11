@@ -120,11 +120,11 @@
         </mat-select>
       </mat-form-field>
 
-      <button mat-raised-button color="primary" class="mb-2" onclick="agregarProfesor()">Agregar nuevo profesor</button>
+      <button mat-raised-button color="primary" class="mb-2" (click)="agregarProfesor()">Agregar nuevo profesor</button>
 
-      <div>
+      <div [hidden]="agregarNuevoProfesor">
         <br>
-        <mat-form-field class="label-field" hidden>
+        <mat-form-field class="label-field">
           <mat-label>Nombre:</mat-label>
           <input matInput />
         </mat-form-field>

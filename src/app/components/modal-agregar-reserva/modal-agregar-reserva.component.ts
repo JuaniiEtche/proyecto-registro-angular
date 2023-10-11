@@ -14,7 +14,7 @@ export class ModalAgregarReservaComponent {
     private registroLinsiService: RegistroLinsiService,
     private snackBar: MatSnackBar
   ) {}
-
+  agregarNuevoProfesor: boolean = true;
   fecha: Date | null = null;
   horaInicio: string | null = null;
   horaFin: string | null = null;
@@ -114,6 +114,19 @@ export class ModalAgregarReservaComponent {
 
     window.location.reload();
   }
+
+  agregarProfesor(){
+  this.agregarNuevoProfesor = !this.agregarNuevoProfesor;
+
+    // Crear un nuevo objeto de tipo profesor
+    const profesor = {
+      nombre: '',
+      apellido: '',
+      email: '',
+      telefono: ''
+    };
+
+}
 
   onCloseModal(): void {
     this.dialogRef.close();
