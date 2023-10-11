@@ -104,7 +104,7 @@
       </mat-form-field>
     </section>
     <section>
-      <mat-form-field class="select-field">
+      <mat-form-field class="select-field" [hidden]="!agregarNuevoProfesor">
         <mat-label>Profesor:</mat-label>
         <mat-select
           [(ngModel)]="profesor"
