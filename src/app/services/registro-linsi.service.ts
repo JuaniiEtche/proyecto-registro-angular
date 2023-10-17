@@ -305,6 +305,29 @@ export class RegistroLinsiService {
       .toPromise();
   }
 
+  agregarProfesor(
+      nombre: any,
+      apellido: any,
+      email: any,
+      telefono: any,
+  ):
+  Promise<any> {
+    const tokenJWT = localStorage.getItem('token');
+
+    const datos = {
+      nombre: nombre,
+      apellido: apellido,
+      email: email,
+      telefono: telefono,
+    };
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${tokenJWT}`,
+    });
+    return this.http
+        .post<any>(this.ip + '/admin/docente', datos, { headers })
+        .toPromise();
+  }
+
   modificarIntegrantes(
     listaLegajosConCheck: any,
     listaLegajosSinCheck: any,

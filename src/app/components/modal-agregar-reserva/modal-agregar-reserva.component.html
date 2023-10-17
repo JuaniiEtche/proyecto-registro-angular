@@ -120,27 +120,27 @@
         </mat-select>
       </mat-form-field>
 
-      <button mat-raised-button color="primary" class="mb-2" (click)="agregarProfesor()">Agregar nuevo profesor</button>
+      <button mat-raised-button color="primary" class="mb-2" (click)="agregarProfesorManualmente()">Agregar nuevo profesor</button>
 
       <div [hidden]="agregarNuevoProfesor">
         <br>
         <mat-form-field class="label-field">
           <mat-label>Nombre:</mat-label>
-          <input matInput />
+          <input matInput [(ngModel)]="nombre"/>
         </mat-form-field>
         <br>
         <mat-form-field class="label-field">
           <mat-label>Apellido:</mat-label>
-          <input matInput />
+          <input matInput [(ngModel)]="apellido"/>
         </mat-form-field>
         <br>
         <mat-form-field class="label-field">
           <mat-label>Email:</mat-label>
-          <input matInput />
+          <input matInput [(ngModel)]="email" />
         </mat-form-field>
         <br>
         <mat-form-field class="label-field">
-          <mat-label>Teléfono:</mat-label>
+          <mat-label [(ngModel)]="telefono">Teléfono:</mat-label>
           <input matInput />
         </mat-form-field>
       </div>

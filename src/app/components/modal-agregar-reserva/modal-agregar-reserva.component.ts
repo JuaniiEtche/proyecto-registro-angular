@@ -15,6 +15,7 @@ export class ModalAgregarReservaComponent {
     private snackBar: MatSnackBar
   ) {}
   agregarNuevoProfesor: boolean = true;
+
   fecha: Date | null = null;
   horaInicio: string | null = null;
   horaFin: string | null = null;
@@ -31,6 +32,12 @@ export class ModalAgregarReservaComponent {
   profesores: any[] | undefined = [];
 
   gabinetesAMandar: string[] = [];
+
+  //ProfesorManual
+  nombre: string | null = null;
+  apellido: string | null = null;
+  email: string | null = null;
+  telefono: string | null = null;
 
   async ngOnInit(): Promise<void> {
     await this.cargarDepartamentos();
@@ -94,11 +101,13 @@ export class ModalAgregarReservaComponent {
       return;
     }
 
-    if (this.profesor == null) {
+    if (this.profesor == null && this.agregarNuevoProfesor == true) {
       const mensaje = 'No se ha seleccionado un profesor';
       const accion = 'Aceptar';
       this.openSnackBar(mensaje, accion);
       return;
+    }else{
+      this.agregarProfesorManualmente();
     }
     const response = await this.registroLinsiService.agregarReserva(
       this.fecha,
@@ -111,22 +120,46 @@ export class ModalAgregarReservaComponent {
       this.gabinetesAMandar
     );
     this.departamentos = response;
-
-    window.location.reload();
+      console.log(response)
+    //window.location.reload();
   }
 
-  agregarProfesor(){
+
+  async agregarProfesorManualmente(){
   this.agregarNuevoProfesor = !this.agregarNuevoProfesor;
 
-    // Crear un nuevo objeto de tipo profesor
-    const profesor = {
-      nombre: '',
-      apellido: '',
-      email: '',
-      telefono: ''
-    };
+  if (this.nombre == null) {
+    this.openSnackBar('El nombre del profesor es obligatorio', 'Aceptar');
+    return;
+  }
 
-}
+  if (this.apellido == null) {
+    this.openSnackBar('El apellido del profesor es obligatorio', 'Aceptar');
+    return;
+  }
+
+  // Crear el objeto ProfesorManual
+  const profesor = {
+    nombre: this.nombre,
+    apellido: this.apellido,
+    email: this.email,
+    telefono: this.telefono,
+  };
+
+  // Guardar el profesor en la base de datos
+  const response = await this.registroLinsiService.agregarProfesor(
+    this.nombre,
+    this.apellido,
+    this.email,
+    this.telefono
+  );
+
+  // Actualizar el estado del componente
+  this.profesor = profesor.nombre + ' ' + profesor.apellido;
+
+  // Mostrar un mensaje de éxito
+  this.openSnackBar('Profesor registrado correctamente', 'Aceptar');
+  }
 
   onCloseModal(): void {
     this.dialogRef.close();
