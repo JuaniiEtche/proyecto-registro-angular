@@ -1,0 +1,93 @@
+<app-cabecera-admin></app-cabecera-admin>
+
+<h2 class="mat-dialog-title">Editar Reserva</h2>
+<mat-divider></mat-divider>
+
+<mat-dialog-content>
+    <form>
+      <section>
+        <h4>Selecciona fecha y hora</h4>
+        <mat-form-field>
+          <mat-label>Elija una fecha</mat-label>
+          <input [(ngModel)]="fecha" name="fecha" matInput [matDatepicker]="picker"/>
+          <mat-hint>DD/MM/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+  
+        <br />
+
+        <br />
+
+        <mat-form-field class="me-2">
+            <mat-label>Horario inicio:</mat-label>
+            <input matInput [(ngModel)]="horaInicio" name="fechaInicio" type="time" placeholder="Seleccione un horario de inicio"/>
+            <mat-hint>HH:SS</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Horario Fin:</mat-label>
+            <input [(ngModel)]="horaFin" name="horaFin" matInput type="time" placeholder="Seleccione un horario de fin"/>
+            <mat-hint>HH:SS</mat-hint>
+        </mat-form-field>
+        
+        </section>
+    
+        <mat-divider></mat-divider>
+        <br />
+        <section class="gabinetes-section">
+            <section>
+              <div class="d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">Selecciona gabinetes</h4>
+              </div>
+            </section>
+            <section *ngFor="let g of gabinetes">
+              <mat-checkbox [(ngModel)]="gabinetesSeleccionados[g.nombre]" [value]="g" name="gabinetesSeleccionados" (change)="cambiarContador(g)">
+                {{ g.nombre }} ({{ g.cantidadEquipos }} equipos)
+              </mat-checkbox>
+            </section>
+          </section>
+          <span>Cantidad total de equipos: {{ contadorEquipos }}</span>
+          <mat-divider></mat-divider>
+          <br />
+          <section>
+            <h4>Selecciona materia y profesor a cargo</h4>
+            <mat-form-field class="me-3 select-field">
+              <mat-label>Departamento:</mat-label>
+              <mat-select [(ngModel)]="departamento" name="departamento" (selectionChange)="cargarMaterias(departamento)">
+                <mat-option *ngFor="let d of departamentos" [value]="d.nombre">
+                    {{ d.nombre}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </section>
+          <section>
+            <mat-form-field class="me-3 select-field">
+              <mat-label>Materia:</mat-label>
+              <mat-select [(ngModel)]="materia" name="materia" (selectionChange)="cargarProfesores(materia)">
+                <mat-option *ngFor="let materia of materias" [value]="materia">
+                    {{ materia}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </section>
+          <section>
+            <mat-form-field class="select-field">
+              <mat-label>Profesor:</mat-label>
+              <mat-select [(ngModel)]="profesor" name="profesor"(selectionChange)="cargarProfesores(materia)">
+                <mat-option *ngFor="let profesor of profesores" [value]="profesor.nombre + ' ' + profesor.apellido">
+                  {{ profesor.apellido }} {{ profesor.nombre }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </section>
+    </form>
+</mat-dialog-content>
+
+
+<button class="btn btn-primary me-2">
+    Editar
+</button>
+<button class="btn btn-secondary" routerLink="/gabinete">
+    Cancelar
+</button>

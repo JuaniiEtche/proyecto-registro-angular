@@ -9,6 +9,7 @@ import { ListadoLineasComponent } from './components/listado-lineas/listado-line
 import { GabineteComponent } from './components/gabinete/gabinete.component';
 import { DetallesBecarioComponent } from './components/detalles-becario/detalles-becario.component'; // Juani le agregó la S a detalleS
 import { DetalleProyectoComponent } from './components/detalle-proyecto/detalle-proyecto.component';
+import { EditarReservaComponent } from './components/editar-reserva/editar-reserva.component';
 import { authGuard } from './auth.guard';
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -46,6 +47,11 @@ const routes: Routes = [
   {
     path: 'detalle-proyecto',
     component: DetalleProyectoComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'editar-reserva',
+    component: EditarReservaComponent,
     canActivate: [authGuard],
   },
 ];

@@ -5,11 +5,9 @@
     <h5 class="modal-title">Detalles del evento</h5>
   </div>
   <div class="modal-body">
-    <a id="editarReserva" target="_blank"
-      ><img
-        src="{{ imagenEditar }}"
-        style="float: right; height: 24px; margin-right: 10px"
-    /></a>
+  <a id="editarReserva" class="btn" routerLink="editar-reserva" (click)="onCloseModal()">
+    <img src="{{ imagenEditar }}" style="float: right; height: 24px; margin-right: 10px"/>
+  </a>
     <div id="eventDate">Fecha: {{ fechaFormateada }}</div>
     <div id="eventStartAndEnd">
       Hora: desde {{ horaMinutos }} hasta las {{ horaMinutos2 }}
