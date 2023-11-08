@@ -1,13 +1,25 @@
 <div class="row">
   <div class="col">
     <div class="form-group">
-      <label for="nombre_apellido">Nombre y Apellido:</label>
+      <label for="nombre">Nombre:</label>
       <input
         type="text"
         class="form-control"
-        name="nombre_apellido"
-        [(ngModel)]="nombreApellido"
-        readonly
+        name="nombre"
+        [(ngModel)]="nombre"
+        [readonly]="!editandoPersonales"
+      />
+    </div>
+  </div>
+  <div class="col">
+    <div class="form-group">
+      <label for="apellido">Apellido:</label>
+      <input
+        type="text"
+        class="form-control"
+        name="apellido"
+        [(ngModel)]="apellido"
+        [readonly]="!editandoPersonales"
       />
     </div>
   </div>
@@ -19,7 +31,7 @@
         class="form-control"
         name="dni"
         [(ngModel)]="dni"
-        readonly
+        [readonly]="!editandoPersonales"
       />
     </div>
   </div>
@@ -28,13 +40,13 @@
 <div class="row">
   <div class="col">
     <div class="form-group">
-      <label for="telefono">Teléfono:</label>
+      <label for="numTelefono">Teléfono:</label>
       <input
         type="text"
         class="form-control"
-        name="telefono"
-        [(ngModel)]="telefono"
-        readonly
+        name="numTelefono"
+        [(ngModel)]="numTelefono"
+        [readonly]="!editandoPersonales"
       />
     </div>
   </div>
@@ -46,7 +58,7 @@
         class="form-control"
         name="email"
         [(ngModel)]="email"
-        readonly
+        [readonly]="!editandoPersonales"
       />
     </div>
   </div>
@@ -60,7 +72,7 @@
         class="form-control"
         name="legajo"
         [(ngModel)]="legajo"
-        readonly
+        [readonly]="!editandoPersonales"
       />
     </div>
   </div>
@@ -71,12 +83,16 @@
         class="form-control"
         id="observaciones"
         name="observaciones"
-        readonly
+        [readonly]="!editandoPersonales"
       ></textarea>
     </div>
   </div>
 </div>
 <div>
-  <button class="btn btn-primary me-2">Editar</button>
-  <button class="btn btn-primary">Imprimir Informe</button>
+  <button class="btn btn-primary me-2" (click)="editarDatosPersonales()">
+    {{ editandoPersonales ? 'Guardar' : 'Editar' }}
+  </button>
+  <button class="btn btn-primary" (click)="cancelarEdicionDatosPersonales()">
+    {{ editandoPersonales ? 'Cancelar' : 'Imprimir Informe' }}
+  </button>
 </div>
