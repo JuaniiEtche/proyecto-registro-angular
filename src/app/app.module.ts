@@ -49,6 +49,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { EditarReservaComponent } from './components/editar-reserva/editar-reserva.component';
+import { CalendariopruebaComponent } from './components/calendarioprueba/calendarioprueba.component';
 
 
 @NgModule({
@@ -83,6 +84,7 @@ import { EditarReservaComponent } from './components/editar-reserva/editar-reser
     ModalRechazarReservaComponent,
     ModalBecariosProyectoComponent,
     EditarReservaComponent,
+    CalendariopruebaComponent,
   ],
   imports: [
     BrowserModule,
